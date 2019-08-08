@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+<meta name="viewport" content="width=device-width, initial-scale=1"> 
+<title>login</title>
+<link rel="stylesheet" type="text/css" href="xklogin/css/normalize.css" />
+<link rel="stylesheet" type="text/css" href="xklogin/css/demo.css" />
+<!--必要样式-->
+<link rel="stylesheet" type="text/css" href="xklogin/css/component.css" />
+
+
+</head>
+<body>
+		<div class="container demo-1">
+			<div class="content">
+				<div id="large-header" class="large-header">
+					<canvas id="demo-canvas"></canvas>
+					<div class="logo_box">
+						<h3>欢迎你</h3>
+						<!--<form action="#" name="f" method="post">-->
+							<div class="input_outer">
+								<span class="u_user"></span>
+								<input id="username" class="text" style="color: #FFFFFF !important" type="text" placeholder="请输入账户">
+							</div>
+							<div class="input_outer">
+								<span class="us_uer"></span>
+								<input id="passwd" class="text" style="color: #FFFFFF !important; position:absolute; z-index:100;"value="" type="password" placeholder="请输入密码">
+							</div>
+							<div class="mb2"><button class="act-but submit"  onclick="loginUser()" style="color: #FFFFFF">登录</button>
+								<button class="act-but submit"  onclick="regist()" style="color: #FFFFFF">还没账号，快去注册</button></div>
+						<!--</form>-->
+					</div>
+				</div>
+			</div>
+		</div><!-- /container -->
+		<script src="xklogin/js/TweenLite.min.js"></script>
+		<script src="xklogin/js/EasePack.min.js"></script>
+		<script src="xklogin/js/rAF.js"></script>
+		<script src="xklogin/js/demo-1.js"></script>
+		<script src="js/jquery.min.js"></script>
+		<div style="text-align:center;">
+<!--<p>更多模板：<a href="http://www.mycodes.net/" target="_blank">源码之家</a></p>-->
+</div>
+		<script>
+			function regist() {
+				window.location.href="regist";
+				window.event.returnValue=false
+			}
+
+			function loginUser() {
+				var username=$("#username").val();
+				var passwd=$("#passwd").val();
+				var pageData={
+					"userName":username,
+					"passwd":passwd
+				}
+				$.ajax({
+					url : 'User/selectUser',
+					method : 'post',
+					data : pageData,
+					traditional: true,
+					cache : false,
+					dataType : 'json',
+					success: function(result){//返回的参数就是 action里面所有的有get和set方法的参数
+						if (result.result == "success") {
+							alert("登录成功！");
+							window.location.href="/HomePage";
+							window.event.returnValue=false;
+						}else {
+							alert(result.errorMessage);
+						}
+
+					},
+					error : function(response) {
+						alert(response.errorMessage);
+						// window.location.href="/login";
+					}
+				});
+
+			}
+		</script>
+	</body>
+</html>

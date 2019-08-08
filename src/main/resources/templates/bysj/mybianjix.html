@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <base href="<%=basePath%>">
+    <meta charset="UTF-8">
+    <title>后台管理系统-首页</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <link href="../../static/js/css/mycss/preset.css" rel="stylesheet" type="text/css">
+    <link href="template/static/css/font/iconfont.css" rel="stylesheet" type="text/css">
+    <link href="../../static/js/css/mycss//index.css" rel="stylesheet" type="text/css">
+    <!--<script type="text/javascript">-->
+        <!--var indexHref = '<%=path%>';-->
+    <!--</script>-->
+</head>
+<body>
+<!--顶部导航 start！-->
+<div class="header-nav clearfix">
+    <div class="logo fl clearfix">
+        <a class="img-logo fl" style="width:60px;padding:9px 16px;">
+            <!--<i class="iconfont">-->
+            <img src="../../static/js/img/month.jpg" height="30px" width="30px">
+            <!--</i>-->
+        </a>
+        <a class="img-home-logo fl">
+            <i class="iconfont" style="font-size:14px">阿月月</i>
+        </a>
+    </div>
+    <div class="header_items fr">
+        <button data-toggle="dropdown" class="header_items-title clearfix" type="button" style="width:110px;padding-left: 20px">
+            <span id="denglu">denglu</span>
+            <i class="iconfont icon-arrowdropdown"></i>
+        </button>
+        <!---<<<<   功能列表-用户个人设置-账号名称    >>>>-->
+        <button data-toggle="dropdown" class="header_items-title clearfix" type="button" style="width:110px">
+
+            <span id="loginName">xx</span>
+            <i class="iconfont icon-arrowdropdown"></i>
+        </button>
+        <!---<<<<   功能列表-用户个人设置-列表    >>>>-->
+        <ul role="menu" class="dropdown-menu" >
+            <li onclick="resetPassword()" ><a href="javascript:void(0)" >修改密码</a></li>
+            <li onclick="logout()" ><a href="javascript:void(0)" >退出</a></li>
+        </ul>
+    </div>
+</div>
+<div class="main">
+    <div class="viewFramework-sidebar" style="overflow: overlay;">
+        <a class="sidebar-fold">
+            <span class="icon-sidebar-fold"></span>
+        </a>
+        <ul class="primary-nav" id="topMenuHtml">
+            <!-- <li class="primary-nav-items active open" title="template/policy.jsp">
+                <a class="nav-items-content">
+                    <div class="nav-icon">
+                        <span class="zc_style"></span>
+                    </div>
+                    <span class="nav-title">政策管理</span>
+                </a>
+            </li>
+            <li class="primary-nav-items" title="template/message.jsp">
+                <a class="nav-items-content">
+                    <div class="nav-icon">
+                        <span class="xx_style"></span>
+                    </div>
+                    <span class="nav-title">消息管理</span>
+                </a>
+            </li>
+            <li class="primary-nav-items" title="template/function.jsp">
+                <a class="nav-items-content">
+                    <div class="nav-icon">
+                        <span class="tipso_style"></span>
+                    </div>
+                    <span class="nav-title">功能管理</span>
+                </a>
+            </li>
+            <li class="primary-nav-items" title="template/role.jsp">
+                <a class="nav-items-content">
+                    <div class="nav-icon">
+                        <span class="js_style"></span>
+                    </div>
+                    <span class="nav-title">角色管理</span>
+                </a>
+            </li>
+            <li class="primary-nav-items" title="">
+                <a class="nav-items-content">
+                    <div class="nav-icon">
+                        <span class="zz_style"></span>
+                    </div>
+                    <span class="nav-title">组织管理</span>
+                </a>
+            </li>
+            <li class="primary-nav-items" title="template/operator.jsp">
+                <a class="nav-items-content">
+                    <div class="nav-icon">
+                        <span class="yh_style"></span>
+                    </div>
+                    <span class="nav-title">用户管理</span>
+                </a>
+            </li> -->
+        </ul>
+        <a class="sidebar-fold">
+            <span class="icon-sidebar-fold"></span>
+        </a>
+        <ul class="primary-nav" id="topMenuHtml">
+            <!-- <li class="primary-nav-items active open" title="template/policy.jsp">
+                <a class="nav-items-content">
+                    <div class="nav-icon">
+                        <span class="zc_style"></span>
+                    </div>
+                    <span class="nav-title">政策管理</span>
+                </a>
+            </li>
+            <li class="primary-nav-items" title="template/message.jsp">
+                <a class="nav-items-content">
+                    <div class="nav-icon">
+                        <span class="xx_style"></span>
+                    </div>
+                    <span class="nav-title">消息管理</span>
+                </a>
+            </li>
+            <li class="primary-nav-items" title="template/function.jsp">
+                <a class="nav-items-content">
+                    <div class="nav-icon">
+                        <span class="tipso_style"></span>
+                    </div>
+                    <span class="nav-title">功能管理</span>
+                </a>
+            </li>
+            <li class="primary-nav-items" title="template/role.jsp">
+                <a class="nav-items-content">
+                    <div class="nav-icon">
+                        <span class="js_style"></span>
+                    </div>
+                    <span class="nav-title">角色管理</span>
+                </a>
+            </li>
+            <li class="primary-nav-items" title="">
+                <a class="nav-items-content">
+                    <div class="nav-icon">
+                        <span class="zz_style"></span>
+                    </div>
+                    <span class="nav-title">组织管理</span>
+                </a>
+            </li>
+            <li class="primary-nav-items" title="template/operator.jsp">
+                <a class="nav-items-content">
+                    <div class="nav-icon">
+                        <span class="yh_style"></span>
+                    </div>
+                    <span class="nav-title">用户管理</span>
+                </a>
+            </li> -->
+        </ul>
+    </div>
+
+    <!--     <div class="viewFramework-sidebar2" style="display: none;">
+            -<<<<   二级左侧边栏隐藏按钮   >>>>
+            <div class="sidebar-fold2">
+                <div class="sidebar-fold2_inner">
+                    <div class="sidebar-fold2_bg"></div>
+                    <div class="sidebar-fold2_icon">
+                        <span class="icon-sidebar-fold2"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="viewFramework-sidebar2-items wdyx">
+            </div>
+        </div> -->
+    <!-- <div style="display: none;">
+        <div id="subMenuId1">
+            <span class="viewFramework-sidebar2-title">政策管理</span>
+            <ul>
+                <li class="subMenuLiHtml" title="policy.jsp"><a>政策管理1</a></li>
+                <li class="subMenuLiHtml" title="policy.jsp"><a>政策管理2</a></li>
+            </ul>
+        </div>
+        <div id="subMenuId2">
+            <span class="viewFramework-sidebar2-title">消息管理</span>
+            <ul>
+                <li class="subMenuLiHtml" title="message.jsp"><a>消息管理1</a></li>
+                <li class="subMenuLiHtml" title="message.jsp"><a>消息管理2</a></li>
+            </ul>
+        </div>
+        <div id="subMenuId3">
+            <span class="viewFramework-sidebar2-title">功能管理</span>
+            <ul>
+                <li class="subMenuLiHtml" title="function.jsp"><a>功能管理1</a></li>
+                <li class="subMenuLiHtml" title="function.jsp"><a>功能管理2</a></li>
+            </ul>
+        </div>
+        <div id="subMenuId4">
+            <span class="viewFramework-sidebar2-title">角色管理</span>
+            <ul>
+                <li class="subMenuLiHtml" title="role.jsp"><a>角色管理1</a></li>
+                <li class="subMenuLiHtml" title="role.jsp"><a>角色管理2</a></li>
+            </ul>
+        </div>
+        <div id="subMenuId5">
+            <span class="viewFramework-sidebar2-title">组织管理</span>
+            <ul>
+                <li class="subMenuLiHtml" title="role.jsp"><a>组织管理1</a></li>
+                <li class="subMenuLiHtml" title="role.jsp"><a>组织管理2</a></li>
+            </ul>
+        </div>
+        <div id="subMenuId6">
+            <span class="viewFramework-sidebar2-title">用户管理</span>
+            <ul>
+                <li class="subMenuLiHtml" title="operator.jsp"><a>用户管理1</a></li>
+                <li class="subMenuLiHtml" title="operator.jsp"><a>用户管理2</a></li>
+            </ul>
+        </div>
+    </div> -->
+    <div class="iframe-wapper">
+        <iframe class="iframePage" name="iframepage" src="regist.html" style="height: 500px;width: 300px;padding-left: 100px"></iframe>
+    </div>
+</div>
+<!--顶部导航 end！-->
+<script src="../../static/js/myjs/main/jquery.min.js"></script>
+<script src="template/static/js/index.js"></script>
+<script src="../../static/js/ysm/login.js"></script>
+<script src="template/static/js/lib/prompt.js"></script>
+</body>
+</html>

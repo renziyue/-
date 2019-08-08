@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html xmlns:td="http://www.w3.org/1999/xhtml" xmlns:th="http://www.w3.org/1999/xhtml"
+	  xmlns:text-align="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="initial-scale=1, width=device-width, maximum-scale=1, user-scalable=no">
+		<title>我的订单</title>
+		<link rel="stylesheet" type="text/css" href="css/grzx/css/grzx.css">
+	<script>
+	</script>
+	</head>
+	<body>
+
+	<div>
+		<div>
+			<img style="width: 40px;height: 20px;padding-top: 5px;padding-left: 2px" src="img/tianpin/img/hh.png" onclick="">
+			<input type="text" readonly="readonly" style="background:transparent;border:0 solid #ffffff;font-size: x-large;text-align: center;padding-top: 20px" value="我的订单" >
+		</div>
+		<!--<div align="center" style="padding-top: 20px">-->
+			<!--<input type="text" readonly="readonly" style="background:transparent;border:0 solid #ffffff;font-size: x-large;text-align: center" value="我的订单" >-->
+		<!--</div>-->
+	</div>
+	<!--<input type="text" th:value="${name}" id="xx">-->
+		<!--<header style="background: lightcoral">-->
+			<!--<div class="user" >-->
+				<!--<i class="iconfont" >&#xe623;</i>-->
+				<!--&lt;!&ndash;<img src="image/hh.png" style="width: 60px;height: 60px">&ndash;&gt;-->
+			<!--</div>-->
+			<!---->
+			<!--<div class="userinfo">-->
+
+				<!--<p>微信昵称</p>-->
+				<!--&lt;!&ndash;<input type="text" value="respond.name" />&ndash;&gt;-->
+				<!--<p th:text="${name}" />-->
+				<!--<p>非会员<span>100积分</span></p>-->
+			<!--</div>-->
+			<!---->
+			<!--<div class="right_icon">-->
+				<!--<a href="javascript:;" class="iconfont">&#xe7f5;</a>-->
+			<!--</div>-->
+		<!--</header>-->
+		
+		<!--<section>-->
+			<!--<a href="javascript:;"><i class="iconfont">&#xe60b;</i>待支付</a>-->
+			<!--<a href="javascript:;"><i class="iconfont" style="background: #e25b5b;">&#xe617;</i>代发货</a>-->
+			<!--<a href="javascript:;"><i class="iconfont" style="background: #62d07a;">&#xe671;</i>待收货</a>-->
+			<!--<a href="javascript:;"><i class="iconfont" style="background: #d6c46a;">&#xe717;</i>待评价</a>-->
+			<!--&lt;!&ndash;<a href="javascript:;"><i class="iconfont" style="background: #ca6abe;">&#xe75f;</i>待维权</a>&ndash;&gt;-->
+		<!--</section>-->
+		<button onclick="addproducter()">tianjia</button>
+		<aside>
+			<!--<ul>-->
+				<!--<li><a href="javscript_3A;" class="sp1"><i class="iconfont">&#xe60b;</i>全部订单<i class="iconfont" style="float: right;font-size: .3rem;">&#xe602;</i></a></li>-->
+				<!--<li style="margin-top: .2rem;"><a href="javscript_3A;" class="sp2"><i class="iconfont">&#xe617;</i>收货地址<i class="iconfont" style="float: right;font-size: .3rem;">&#xe602;</i></a></li>-->
+				<!--<li style="margin-top: .2rem;"><a href="javscript_3A;" class="sp3"><i class="iconfont">&#xe717;</i>修改密码<i class="iconfont" style="float: right;font-size: .3rem;">&#xe602;</i></a></li>-->
+				<!--<li><a href="javscript_3A;" class="sp8"><i class="iconfont">&#xe75f;</i>我的购物车<i class="iconfont" style="float: right;font-size: .30rem;">&#xe602;</i></a></li>-->
+			<!--</ul>-->
+			<ul id="producterlist">
+				<!--<li>-->
+					<!--<div>-->
+						<!--<div>-->
+							<!--<span>订单编号：</span>-->
+							<!--<label>112255889966</label>-->
+						<!--</div>-->
+						<!--<div>-->
+							<!--<label>小蝴蝶</label>-->
+						<!--</div>-->
+						<!--<div>-->
+							<!--<img src="img/tianpin/img/hh.png" >-->
+							<!--<span>售价：</span>-->
+							<!--<span>99</span>-->
+						<!--</div>-->
+						<!--<div style="padding-right: 50px">-->
+							<!--<button>再来一单</button>-->
+						<!--</div>-->
+					<!--</div>-->
+					<!--<div>-->
+
+					<!--</div>-->
+				<!--</li>-->
+				<!--<li >-->
+					<!--<div style="padding-top: 50px">-->
+						<!--<div>-->
+							<!--<span>订单编号：</span>-->
+							<!--<label>112255889966</label>-->
+						<!--</div>-->
+						<!--<div>-->
+							<!--<label>小蝴蝶</label>-->
+						<!--</div>-->
+						<!--<div>-->
+							<!--<img src="img/tianpin/img/hh.png" >-->
+							<!--<span>售价：</span>-->
+							<!--<span>99</span>-->
+						<!--</div>-->
+						<!--<div style="padding-right: 50px">-->
+							<!--<button>再来一单</button>-->
+						<!--</div>-->
+					<!--</div>-->
+					<!--<div>-->
+
+					<!--</div>-->
+				<!--</li>-->
+				<!--<li>-->
+					<!--<div >-->
+						<!--<div>-->
+							<!--<span>订单编号：</span>-->
+							<!--<label>112255889966</label>-->
+						<!--</div>-->
+						<!--<div>-->
+							<!--<label>小蝴蝶</label>-->
+						<!--</div>-->
+						<!--<div>-->
+							<!--<img src="img/tianpin/img/hh.png" >-->
+							<!--<span>售价：</span>-->
+							<!--<span>99</span>-->
+						<!--</div>-->
+						<!--<div style="padding-right: 50px">-->
+							<!--<button>再来一单</button>-->
+						<!--</div>-->
+					<!--</div>-->
+					<!--<div>-->
+
+					<!--</div>-->
+				<!--</li>-->
+			</ul>
+		</aside>
+		<div style="height: 1rem;"></div>
+		<!--<footer >-->
+			<!--<a href="javascript:;"><i class="iconfont">&#xe60b;</i>首页</a>-->
+			<!--<a href="javascript:;"><i class="iconfont">&#xe75f;</i>分类</a>-->
+			<!--<a href="javascript:;"><i class="iconfont">&#xe671;</i>购物车</a>-->
+			<!--<a href="javascript:;"><i class="iconfont">&#xe617;</i>我的</a>-->
+		<!--</footer>-->
+		<script  src="tianpin/js/comm/jquery.min.js"></script>
+		<script>
+			$('footer a').click(function(){
+				$(this).addClass('on').siblings().removeClass('on');
+			});
+			$('a').click(function(){
+				alert('暂时开发中,敬请期待!');
+			})
+		</script>
+	<script src="myjs/order.js"></script>
+	</body>
+</html>

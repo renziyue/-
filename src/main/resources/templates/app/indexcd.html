@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<title>收货人信息</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, width=device-width">
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+<link rel="stylesheet" type="text/css" href="sjld/js/css/reset1.css">
+<link rel="stylesheet" type="text/css" href="sjld/js/css/enter1.css">
+</head>
+<body >
+
+<span style="font-max-size: x-large;color: #2fa0ec;align-content: center"> 请编辑收货人信息：</span>
+
+    <!-- 第三页 -->
+    <div class="three" style="display: block;">
+        <!-- 主体部分 -->
+        <div class="oneMain">
+
+            <div style="padding-top:20px">
+                <span style="font-size: medium">收货人姓名:</span>
+                <input type="text" id="sjrname" value="" placeholder="请输入收件人姓名" style="padding-left: 10px">
+            </div>
+            <div style="padding-top: 40px">
+                <span style="font-size: medium">收货人手机号:</span>
+                <input type="text" id="sjrphone" value="" placeholder="请输入收件人手机号" style="padding-left: 10px;width: 200px;height: 37px">
+            </div>
+            <br>
+            <br>
+            <div class="chooseCity" style="padding-top: 40px">
+
+                <span class="s" >省份</span>
+
+                <br>
+                <br>
+                <span class="c" >城市</span>
+<br>
+                <span class="q" >区</span>
+            </div>
+
+            <div class="chooseCityList">
+                <section class="province"  style="display: none;" id="prov">
+
+                </section>
+                <br>
+                <br>
+                <section class="city" style="display: none;" id="city">
+
+                </section>
+                <br>
+                <section class="region" style="display: none;" id="reg">
+
+                </section>
+            </div>
+
+            <div>
+
+            </div>
+            <!--<span>请填写详细地址:</span>-->
+            <div style="height: 10px;width: 150px;padding-top: 30px">
+                <textarea value="" id="xiangxi" placeholder="请填写详细地址" style="height: 50px;width:270px;font-max-size: x-large" />
+            </div>
+
+            <div style="height: 50px;width: 150px;padding-top: 50px">
+                <button onclick="getaddress()">确定</button>
+            </div>
+
+
+        </div>
+        <div style="padding-top: 20px">
+            <div style="height: 50px;width: 150px;padding-top: 10px">
+                <textarea id="addressText" value="" placeholder="" style="height: 50px;width:270px;font-max-size: x-large;background: #d8eeff" readonly="readonly"/>
+            </div>
+
+            <div style="height: 50px;width: 150px;padding-top: 10px">
+                <button onclick="setaddress('1')">设为默认地址</button>
+
+                <button onclick="setaddress('0')">添加</button>
+            </div>
+        </div>
+<!--测试sessiOn-->
+        <!--<button onclick="test()">点击</button>-->
+
+    </div>
+
+
+<script type="text/javascript" src="sjld/js/jquery-1.8.2.min.js"></script>
+<script type="text/javascript" src="sjld/js/js/index.js"></script>
+<script type="text/javascript" src="sjld/js/js/addaddress1.js"></script>
+
+<script src="sjld/js/json/CityJson2.js" type="text/javascript"></script>
+<script src="sjld/js/json/ProJson.js" type="text/javascript"></script>
+<script src="sjld/js/json/DistrictJson.js" type="text/javascript"></script>
+
+</body>
+</html>
+

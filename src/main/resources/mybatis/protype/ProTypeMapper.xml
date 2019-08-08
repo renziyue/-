@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo2.dao.protype.ProTypeMapper">
+    <resultMap id="BaseResultMap" type="com.example.demo2.entity.protype.ProType" >
+        <result column="ID" property="id" jdbcType="VARCHAR" />
+        <result column="PRO_TYPE" property="proType" jdbcType="VARCHAR" />
+        <result column="PHONE" property="phone" jdbcType="VARCHAR" />
+        <result column="BIANHAO" property="bianHao" jdbcType="VARCHAR" />
+        <result column="EXT1" property="ext1" jdbcType="VARCHAR" />
+        <result column="EXT2" property="ext2" jdbcType="VARCHAR" />
+    </resultMap>
+    <select id="selectAll" resultMap="BaseResultMap">
+        select * from PRO_TYPE  where PHONE =#{phone} and BIANHAO =#{bianhao}
+        <if test="id != null  and id !=''">
+            and ID=#{phone}
+        </if>
+
+    </select>
+
+
+    <select id="selecProType" resultType="java.lang.String">
+        select PRO_TYPE from PRO_TYPE  where PHONE =#{phone} and BIANHAO =#{bianhao}
+
+    </select>
+
+    <insert id="addprotype" parameterType="com.example.demo2.entity.protype.ProType">
+             insert into PRO_TYPE (ID, PRO_TYPE, PHONE,BIANHAO, EXT1, EXT2)
+    values (#{record.id,jdbcType=VARCHAR}, #{record.proType,jdbcType=VARCHAR}, #{record.phone,jdbcType=VARCHAR},
+      #{record.bianHao,jdbcType=VARCHAR},  #{record.ext1,jdbcType=VARCHAR}, #{record.ext2,jdbcType=VARCHAR})
+
+    </insert>
+
+    <update id="updateprotype" parameterType="com.example.demo2.entity.protype.ProType">
+        update PRO_TYPE set
+
+        PRO_TYPE = #{record.proType,jdbcType=VARCHAR}
+
+        where ID =#{record.id,jdbcType=VARCHAR}
+        and PHONE=#{record.phone,jdbcType=VARCHAR}
+        and BIANHAO=#{record.bianHao,jdbcType=VARCHAR}
+    </update>
+
+    <delete id="deletetprotype">
+        delete from PRO_TYPE
+          where ID =#{record.id,jdbcType=VARCHAR}
+        and PHONE=#{record.phone,jdbcType=VARCHAR}
+        and BIANHAO=#{record.bianHao,jdbcType=VARCHAR}
+    </delete>
+</mapper>

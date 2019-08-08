@@ -1,0 +1,288 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+<!-- 启用极速模式(webkit) -->
+<meta name="renderer" content="webkit">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+<!--  -->
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="KeyWords" content="产品中心">
+<meta name="description" content="产品中心">
+<title>产品中心</title>
+<link rel="shortcut icon" type="image/x-icon" href="img/upimages/favicon.ico" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="format-detection" content="telephone=no" />
+<meta name='apple-touch-fullscreen' content='yes' />
+<meta name="full-screen" content="yes">
+<!-- SEO友好提示 -->
+<meta name="applicable-device" content="pc,mobile">
+<!--[if lt IE 9]>
+<script type="text/javascript" src="tianpin/js/comm/html5shiv.js"></script>
+<script type="text/javascript" src="tianpin/js/comm/respond.min.js"></script>
+<![endif]-->
+<script type="text/javascript" src="tianpin/js/comm/jquery.min.js"></script>
+<script type="text/javascript" src="tianpin/js/comm/jquery.lazyload.min.js"></script>
+<script type="text/javascript" src="tianpin/js/comm/jquery.nicescroll.min.js"></script>
+<script type="text/javascript" src="tianpin/js/comm/ubox.js" charset="utf-8"></script>
+<script type="text/javascript" src="tianpin/js/comm/wow.js" charset="utf-8"></script>
+<script type="text/javascript" src="tianpin/js/comm/alert.js" charset="utf-8"></script>
+<script type="text/javascript" src="tianpin/js/061705.js" charset="utf-8"></script>
+<link rel="stylesheet" type="text/css" href="css/tianpin/css/comm/font/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="css/tianpin/css/comm/animate.min.css"/>
+<link rel="stylesheet" type="text/css" href="css/tianpin/css/comm/box.css"/>
+<link rel="stylesheet" type="text/css" href="css/tianpin/css/comm/alert.css"/>
+<link rel="stylesheet" type="text/css" href="css/tianpin/css/061705.css"/>
+	<link rel="stylesheet" type="text/css" href="css/mycss/producter.css"/>
+	<link rel="stylesheet" type="text/css" href="css/grzx/css/grzx.css">
+<!--<style>-->
+	<!--*{padding: 0;margin: 0;}-->
+	<!--.box{width: 50%;height: 50%;}-->
+	<!--.main{width: 100%;height: 100%;background-color: rgba(0,0,0,0.8);display: none;position: fixed;z-index: 1;}-->
+	<!--.mainbox{width: 800px;height: 100%;margin: 0 auto;background-color: rgba(255,255,255,0.8);padding: 20px;display: none;}-->
+	<!--.kkk{width: 100%;height: 1200px;background-color: red;}-->
+	<!--.close{color: red;cursor: pointer;}-->
+<!--</style>-->
+<script>
+//是否手机端判断
+var ua = navigator.userAgent;
+var ipad = ua.match(/(iPad).*OS\s([\d_]+)/),
+isIphone =!ipad && ua.match(/(iPhone\sOS)\s([\d_]+)/),
+isAndroid = ua.match(/(Android)\s+([\d.]+)/),
+isMobile = isIphone || isAndroid;
+if(isMobile){
+	$("head").append("<meta content='width=320,user-scalable=no' name='viewport'>");
+}
+</script>
+<script>
+if (!(/msie [6|7|8|9]/i.test(navigator.userAgent))){
+	new WOW().init();
+};
+var DIY_WEBSITE_ID = "1114";
+var DIY_JS_SERVER = "s143js.nicebox.cn";
+</script>
+</head>
+<body style="background: #fff2fe">
+<!--<div class="main">-->
+	<!--<div class="mainbox">-->
+		<!--<div class="close">点击关闭</div>-->
+	<!--</div>-->
+<!--</div>-->
+<!--<div class="box">-->
+	<!--<div class="kkk">-->
+		<!--<input class="btn" type="button" value="点击淡入弹窗" />-->
+	<!--</div>-->
+<!--</div>-->
+<footer style="background: #d6c46a; z-index:999">
+	<a href="/appCommPage?page=首页"><i class="iconfont">&#xe60b;</i>首页</a>
+	<a href="/appCommPage?page=产品页"><i class="iconfont">&#xe75f;</i>分类</a>
+	<a href="appOrderPage"><i class="iconfont">&#xe671;</i>购物车</a>
+	<a href="appGRZX"><i class="iconfont">&#xe617;</i>我的</a>
+
+</footer>
+<input type="hidden" th:value="${bianhao}" id="bianhao">
+<!--<input type="hidden" th:value="${phone}" id="phone">-->
+<input type="hidden" th:value="${value}" id="value">
+<input type="hidden" th:value="${phone}" id="phone">
+
+<!--<button onclick="updataData()" id="baocunwenjian">dianwoceshi</button>-->
+	<script type="text/javascript">var Default_isFT = 0;</script>
+<script type="text/javascript" src="tianpin/js/comm/transform.js"></script>
+	<div id="comm_layout_header" class="layout  none"  data-wow-duration='0s' data-wow-delay='0s' data-wow-offset='0' data-wow-iteration='1'>
+		<div class="view_contents">
+			<div id="div_includeBlock_1492054720583" class="view includeBlock div  none includeView"  data-wow-duration='0s' data-wow-delay='0s' data-wow-offset='0' data-wow-iteration='1' >
+				<div names="div" class="view_contents" >
+					<div id="dh_style_01_1495502294245" class="view style_01 dh  none lockHeightView"  data-wow-duration='0s' data-wow-delay='0s' data-wow-offset='0' data-wow-iteration='1' >
+						<div names="dh" class="view_contents" >
+							<div id="menu" class="menu menuStyle_1">
+								<div class="menuLayout">
+									<ul class="miniMenu columnSet showmobile">
+										<li class="leftBox">
+											<div class="nav"></div>
+											<div class="sidebar icoMenuSet" onclick="setDhListen('style_01',this)">=</div>
+											<div class="menuScroll">
+												<ul class="menuUlCopy">
+													<li class="rflex" pageid="61708" showmobile=""><a class="mainMenuSet" href="/appCommPage?page=首页">首页</a>
+													</li>
+													<li class="rflex" pageid="61700" showmobile=""><a class="mainMenuSet" href="/appGRZX">个人中心</a>
+													</li>
+													<li id="hot" class="rflex" pageid="61705" showmobile=""><a class="mainMenuSet" href="/appCommPage?page=产品页">产品中心</a>
+													</li>
+													<!--<li class="rflex" pageid="61709" showmobile=""><a class="mainMenuSet" href="news.html">新闻资讯</a>-->
+													<!--</li>-->
+													<!--<li class="rflex" pageid="61706" showmobile=""><a class="mainMenuSet" href="aboutUs.html">关于我们</a>-->
+													<!--</li>-->
+													<li class="rflex" pageid="61704" showmobile=""><a class="mainMenuSet" href="contactUs.html">联系我们</a>
+													</li>
+												</ul>
+											</div>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div id="image_logo_1495604573754" class="view logo image  none"  data-wow-duration='0s' data-wow-delay='0s' data-wow-offset='0' data-wow-iteration='1'>
+						<div names="image" class="view_contents" >
+							<div class="logoStyle modSet">
+								<a href='index.html' target="_self"><img class="imgSet" src="img/tianpin/img/hh.png" title="" alt="" style="width:70%; height:40%" id="logoimg"/></a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="layout_1492394729151" class="layout  none"  data-wow-duration='0s' data-wow-delay='0s' data-wow-offset='0' data-wow-iteration='1'>
+		<div class="view_contents">
+			<div id="image_style_01_1492394729153" class="view style_01 image  none"  data-wow-duration='0s' data-wow-delay='0s' data-wow-offset='0' data-wow-iteration='1'>
+				<div names="image" class="view_contents" >
+					<div class="imgStyle CompatibleImg">
+						<a href='javascript:;' target="">
+							<img class="picSet link-type-" src="img/tianpin/img/hh.png" title="" alt="描述" id="text4" onclick="exitpic(this.id)"/>
+						</a>
+					</div>
+				</div>
+			</div>
+			<div id="text_style_02_1492394729168" class="view style_02 text  none wow fadeInDown lockHeightView"  data-wow-duration='1s' data-wow-delay='0.25s' data-wow-offset='0' data-wow-iteration='1'>
+				<div names="text" class="view_contents" >
+					<input type="text" class="producterinput" id="text1" value="点我编辑文字"/>
+
+				</div>
+			</div>
+			<div id="text_style_02_1492394729175" class="view style_02 text  none wow fadeInDown lockHeightView"  data-wow-duration='1s' data-wow-delay='1s' data-wow-offset='0' data-wow-iteration='1'>
+				<div names="text" class="view_contents" >
+
+					<input type="text" class="producterinput" id="text2" value="点我编辑文字"/>
+
+				</div>
+			</div>
+			<div id="text_style_02_1492394729181" class="view style_02 text  none wow fadeInUp lockHeightView"  data-wow-duration='1s' data-wow-delay='1.5s' data-wow-offset='0' data-wow-iteration='1'>
+				<div names="text" class="view_contents" >
+
+					<input type="text" class="producterinput" id="text3" value="点我编辑文字"/>
+
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="layout_1490857264508" class="layout  none"  data-wow-duration='0s' data-wow-delay='0s' data-wow-offset='0' data-wow-iteration='1'>
+		<div class="view_contents">
+			<div id="homelink_style_01_1490857264512" class="view style_01 homelink  none lockHeightView"  data-wow-duration='0s' data-wow-delay='0s' data-wow-offset='0' data-wow-iteration='1'>
+				<div names="homelink" class="view_contents" >
+					<ol class="breadcrumb location_style01">
+						<li><a class="textSet" href="/appCommPage?page=首页" onclick="">首页</a></li>
+						<li class="active textSet">产品中心</li>
+					</ol>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="layout_1490860791514" class="layout  none"  data-wow-duration='0s' data-wow-delay='0s' data-wow-offset='0' data-wow-iteration='1'>
+		<div class="view_contents">
+			<div id="prodKind_style_03_1483951009520" class="view style_03 prodKind  none lockHeightView"  data-wow-duration='2s' data-wow-delay='0.25s' data-wow-offset='0' data-wow-iteration='1'>
+				<div names="prodKind" class="view_contents" >
+					<script></script>
+<!--<script type="text/javascript" src="tianpin/js/comm/default.js"></script>-->
+<!---产品分类区域-->
+					<div class="prodcateStyle_3">
+						<ul class="oneBgSet" id="typeul">
+							<li class="oneSet" style="background: #2fa0ec"><a href="#" target="_self" onclick="seletTypeis('')">全部</a></li>
+							<!--<li class="oneSet" style="background: #2fa0ec">马卡龙</a></li>-->
+
+							<!--<button id="clickme" onclick="add()">点我添加类型</button>-->
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+<script type="text/javascript">
+	$(function(){//有客户需求，点击分页之后回到顶部
+		$(".paging").click(function(){
+			scrollTo(0,10);
+		})
+	})
+	function is_mobile(){
+		return window.screen.width<767 || ($('body').width() > 0 && $('body').width() < 1180);
+	}
+</script>
+
+	<!--<div>-->
+		<!--<button id="clickme" onclick="add()">点我添加类型</button>-->
+	<!--</div>-->
+
+	<div id="layout_1483946794950" class="layout  none"  data-wow-duration='0s' data-wow-delay='0s' data-wow-offset='0' data-wow-iteration='1'>
+		<div class="view_contents">
+			<div id="productList_style_01_1483950493882" class="view style_01 productList  none wow fadeInLeft lockHeightView"  data-wow-duration='1s' data-wow-delay='0.25s' data-wow-offset='0' data-wow-iteration='1'>
+				<div names="productList" class="view_contents" >
+					<div class='productorder order1'></div>
+				</div>
+				<!--<link href='../../s143js.nicebox.cn/share/productsortV9.css' rel='stylesheet' type='text/css'>-->
+				<div class="prod_default">
+					<!--<li><button id="addprodoct" onclick="diaoyongParenttext()">添加产品</button></li>-->
+					<input type='text' style='border:0px;background:rgba(0, 0, 0, 0);' readonly='readonly'>
+					<ul id="prod_Ulist" >
+						<!--<li><button id="addprodoct" onclick="diaoyongParenttext()">添加产品</button></li>-->
+
+						<!--<li class="prod_Item modSet">-->
+							<!--<div class="relative">-->
+					<!--&lt;!&ndash; 产品图片 &ndash;&gt;-->
+								<!--<div class="prodImg_box imgSet">-->
+									<!--<div class="prod_img"><a href="productDetail.html@pid=125652" target="_self"><img class="pro_img horizontal" src="http://sj.gsxl.com.cn/e3bd0a59e509d565/img/upimages/pkgimg/prodimg/201705/4_6474.jpg" /><span></span></a></div>-->
+									<!--<div class="dummy" style="margin-top:67%"></div>-->
+								<!--</div>-->
+					<!---->
+					<!--&lt;!&ndash; 内容 &ndash;&gt;-->
+								<!--<div class="prod_info">-->
+									<!--<div class="p_line">-->
+							<!---->
+									<!--</div>-->
+									<!--<div class="p_name titleSet mobile"><a href="productDetail.html@pid=125652" target="_self">百年好合</a></div>-->
+						<!---->
+									<!--<div class="p_detail detailSet mobile"></div>-->
+									<!--<div class="p_line">-->
+										<!--<div class="p_group">-->
+											<!--<span class="p_lb sortSet">类别：</span>-->
+											<!--<span class="p_category sortSet">芝士蛋糕</span>-->
+										<!--</div>-->
+							<!---->
+									<!--</div>-->
+						<!--&lt;!&ndash;购买按钮&ndash;&gt;-->
+								<!--</div>-->
+							<!--</div>-->
+						<!--</li>-->
+
+
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+
+					</ul>
+					<!--<div class="page_btn">-->
+						<!--<script>var sys_url_productList_style_01_1483950493882="viewid=productList_style_01_1483950493882&name=productList&style=style_01&langid=0&pageid=61705&viewCtrl=default";</script><a class="paging cur" href="javascript:;" page='1'>1</a><a class="paging" page='2' href="javascript:;" onclick="RequestURL('productList_style_01_1483950493882', sys_url_productList_style_01_1483950493882, 'P_page=2')">2</a><a class="next_btn" href="javascript:;" onclick="RequestURL('productList_style_01_1483950493882', sys_url_productList_style_01_1483950493882, 'P_page=2')">></a>-->
+					<!--</div>-->
+				</div>
+
+
+				<script type="text/javascript">
+$(function(){//有客户需求，点击分页之后回到顶部
+	$(".paging").click(function(){
+		scrollTo(0,0);
+	})
+})
+function is_mobile(){
+	return window.screen.width<767 || ($('body').width() > 0 && $('body').width() < 767);
+}
+				</script>
+
+
+		<!--<div style="display:none">-->
+<!--<script language="javascript" type="text/javascript" src="../../js.users.51.la/19205714.js"></script> -->
+</div>
+			<script type="text/javascript" src="app/producter.js"></script>
+</body>
+</html>

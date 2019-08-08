@@ -1,0 +1,291 @@
+
+<!doctype html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>编辑页面</title>
+
+    <meta content="always" name="referrer">
+    <link href="fanke/css/comm.min.css%3Fv=201902191012.css" rel="stylesheet" type="text/css" />
+    <script src="myjs/main/jquery.min.js"></script>
+
+
+    <script type="text/javascript" src="fanke/css/swiper.min.css%3Fv=201812171713.css"></script>
+    <link href="css/grzx/css/index_bg.css" rel="stylesheet" type="text/css" />
+    <!--<link href="fanke/css/index_fkw.min.css%3Fv=201901231802.css" rel="stylesheet" type="text/css" />-->
+    <link href="fanke/css/service.min.css%3Fv=201808201715.css" rel="stylesheet" type="text/css" />
+    <link href="fanke/css/fkwComm.min.css%3Fv=201901281724.css" rel="stylesheet" type="text/css" />
+    <link href="fanke/css/swiper.min.css%3Fv=201812171713.css" rel="stylesheet" type="text/css" />
+    <style type = "text/css">
+        *html{background-image:url(about:blank);background-attachment:fixed;}
+        body{overflow: hidden;}
+    </style>
+    <script>
+
+
+    </script>
+</head>
+<body class='fkw-body-container'>
+<input type="hidden" th:value="${bianhao}" id="bianhao2">
+<!-- header -->
+
+<link type="text/css" href="fanke/css/header.min.css%3Fv=201812261443.css" rel="stylesheet">
+<!--nav start-->
+
+<div class="f-topBar f-fkw-topBar">
+
+    <div class="fkw-topbar-box">
+        <img src="img/tempalteImg/two.jpg" style="height: 70px;width: 70px">
+        <!--<input type="text"   style="height: 70px;width: 140px;top: 15px;margin-left: 75px;margin-bottom: 10px" value="xxxxxx">-->
+        <div class="f-topbar-right">
+            <!--<div class="opPanel">-->
+            <div class="topbar-item topbar-item-aboutFKW " style="padding-right: 570px">
+                <div class="topbar_btn topbar_btn_aboutFKW">
+                    <i class="topbar_btn_icon_before"></i>
+                    <a href="#" target="_blank" class="topbar_btn_text"><b>编辑状态:</b></a>
+                    <i class="topbar_btn_icon_after"></i>
+                </div>
+            </div>
+                <div class="topbar-item topbar-item-aboutFKW ">
+                    <div class="topbar_btn topbar_btn_aboutFKW">
+                        <i class="topbar_btn_icon_before"></i>
+                        <a href="#" target="_blank" class="topbar_btn_text">yeye</a>
+                        <i class="topbar_btn_icon_after"></i>
+                    </div>
+                </div>
+                <div class="topbar-item topbar-item-registerCenter">
+                    <div class="topbar_btn topbar_btn_registerCenter">
+                        <i class="topbar_btn_icon_before"></i>
+                        <a href="#" onclick="fabu()" target="_blank" class="topbar_btn_text">发布</a>
+                        <i class="topbar_btn_icon_after"></i>
+                    </div>
+                </div>
+            <div class="opPanel" id="user">
+                <div class="topbar-item topbar-item-registerCenter">
+                    <div class="topbar_btn topbar_btn_registerCenter">
+                        <i class="topbar_btn_icon_before"></i>
+                        用户：<input type="text" th:value="${name}" id="userName" style="font-size: large;width: 60px;height: 70px;background:transparent;border:0 solid #ffffff">欢迎您
+
+                        <i class="topbar_btn_icon_after"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<!--nav end-->
+
+<!--banner start-->
+<div class="clear"></div>
+<div class="fk-banner fk-banner-index">
+    <div class='fkw-panel-1th'>
+        <div class='fkw-panel-bg' style="height: 590px;"></div>
+        <div class="fkw-ban-container">
+            <div class="fkProductNav" style="width: 150px">
+                <div class='fkProductNav-title'>页面</div>
+                <ul class="fkProductNav-ul" id="selectPage">
+
+                    <!--&lt;!&ndash;</li>&ndash;&gt;-->
+                    <!--<li class="fkw-li-mall">-->
+                    <!--&lt;!&ndash;<a  target="_blank" href="//mall.fkw.com" onclick="Fai.logDog(4000088,311);">&ndash;&gt;-->
+                    <!--<span class="fkw-nav-icon"></span>-->
+                    <!--<div class='fkw-nav-box'>-->
+                        <!--<button id="btn1">jquery</button>-->
+                        <!--<input type="text" id="input1" value="test">-->
+                    <!--</div>-->
+                    <!--&lt;!&ndash;</a>&ndash;&gt;-->
+                    <!--</li>-->
+
+                    <!--<li class="fkw-li-site">-->
+                        <!--<a target="_blank" href="//jz.fkw.com" onclick="Fai.logDog(4000088,12);">-->
+                            <!--<span class="fkw-nav-icon"></span>-->
+                            <!--<div class='fkw-nav-box'>-->
+                                <!--<button id="btn" >jquery</button>-->
+                              <!--&lt;!&ndash;<div class="fkw-nav-box-detail-zz"></div>&lt;!&ndash;详情遮罩&ndash;&gt;&ndash;&gt;-->
+                            <!--</div>-->
+                        <!--</a>-->
+                    <!--</li>-->
+
+
+
+
+                </ul>
+
+            </div>
+
+            <!--<div class="fkProductNav">-->
+                <!--<div class='fkProductNav-title'>产品服务</div>-->
+                <!--<ul class="fkProductNav-ul">-->
+                <!--</ul>-->
+            <!--</div>-->
+            <!--<div class="fkProductNav" style="width: 150px">-->
+                <!--<div class='fkProductNav-title'>控件</div>-->
+                <!--<ul class="fkProductNav-ul">-->
+
+                    <!--&lt;!&ndash;</li>&ndash;&gt;-->
+                    <!--<li class="fkw-li-mall">-->
+                        <!--<a  target="_blank" href="//mall.fkw.com" onclick="Fai.logDog(4000088,311);">-->
+                            <!--<span class="fkw-nav-icon"></span>-->
+                            <!--<div class='fkw-nav-box'>-->
+
+
+
+                            <!--</div>-->
+                        <!--</a>-->
+                    <!--</li>-->
+
+
+
+
+                    <li class="fkw-li-site">
+                        <input type="text" th:value="${bianhao}" id="bianhao1" width="60px" onclick="ccc()">
+                        <!--<input type="text" th:value="${name}" id="bianhao9" width="60px">-->
+                        <!--&lt;!&ndash;<span style="font-size: medium"> xxxxxxxxxxx</span>&ndash;&gt;-->
+                        <!--<br>-->
+                    </li>
+
+
+                <!--</ul>-->
+                <!--&lt;!&ndash;<div>xx</div>&ndash;&gt;-->
+            <!--</div>-->
+
+            <button>
+                发布
+            </button>
+            <div class='fkProductBan'  >
+
+                <div id="swiper-container" class="fk-index-sliderPanel" style="height:1000px;width: 700px;padding-left: 170px">
+                    <div >
+                        <!--<iframe src="/home?phone=123&bianhao=456" id="frame1" name="abc" style="height: 600px; width: 400px">-->
+
+                        <!--</iframe>-->
+                        <iframe src="" id="frame1" name="abc" style="height: 500px; width: 300px">
+
+                        </iframe>
+                    </div>
+                    <div style="z-index:999;background: #ffcab8;width:270px;
+height:auto;
+position: fixed;
+float: right;
+left:40%;
+top:25%;
+z-index: 999;
+margin-left:530px;display: none" id="showbianji" >
+                        <div>
+                            <span style="font-size: x-large;padding-left: 45px">编辑图片：</span>
+                        </div>
+                        <div class="right" style="padding-top: 15px;padding-left: 15px">
+                            <!--<span>上传图片</span>-->
+                            <input type="file" class="file-btn" id="upfile">
+
+                        </div>
+                        <div class="right" style="padding-top: 15px;padding-left: 15px">
+                            <button style="font-size: medium;background: #d079ff" onclick="upload()">点此上传</button>
+                            <!--<span>按钮名称</span>-->
+                            <!--<input type="text" id="xx" value="">-->
+                        </div>
+                        <div  class="right" style="padding-top: 15px;padding-left: 25px">
+                         <!--<input type="image" src="">-->
+                            <img src="" style="width: 70px;height: 70px"  id="baocun">
+                        </div>
+                        <div id="probianji">
+
+                        <div class="right" style="padding-top: 15px;padding-left: 25px">
+                            <input type="hidden" value=""  id="proid">
+                            <span>产品名称：</span>
+                            <input type="text" value="" id="proName">
+                        </div>
+
+                        <div class="right" style="padding-top: 15px;padding-left: 25px">
+                            <span>产品类型：</span>
+                            <input type="text" value="" id="proType">
+                        </div>
+
+                        <div class="right" style="padding-top: 15px;padding-left: 25px">
+                            <span>产品数量：</span>
+                            <input type="text" value="" id="proNum">
+                        </div>
+
+                        <div class="right" style="padding-top: 15px;padding-left: 25px">
+                            <span>产品价格：</span>
+                            <input type="text" value="" id="proprice">
+                        </div>
+
+                        <div class="right" style="padding-top: 15px;padding-left: 25px">
+                            <span>其&nbsp &nbsp他：</span>
+                            <input type="text" value="" id="proext">
+                        </div>
+                        </div>
+                        <!--<div  class="right" style="padding-top: 15px;padding-left: 25px">-->
+                            <!--&lt;!&ndash;<input type="image" src="">&ndash;&gt;-->
+                            <!--<input type="text" value="" id="input2">-->
+                        <!--</div>-->
+                        <div  class="right" style="padding-top: 15px;padding-left: 15px" id="modifsrc">
+                            <!--<input type="image" src="">-->
+                            <input type="button"  style="font-size: medium;background: #d079ff" value="更改" onclick="bindimg()">
+                            <input type="button"  style="font-size: medium;background: #d079ff;scroll-padding: 35px" value="取消" onclick="quxao()">
+                        </div>
+
+                        <div  class="right" style="padding-top: 15px;padding-left: 15px" id="modifpro">
+                            <!--<input type="image" src="">-->
+                            <input type="button"  style="font-size: medium;background: #d079ff" value="更改" onclick="bindpro()">
+                            <input type="button"  style="font-size: medium;background: #d079ff;scroll-padding: 35px" value="取消" onclick="quxao()">
+                        </div>
+
+                        <div  class="right" style="padding-top: 15px;padding-left: 15px" id="updatepro">
+                            <!--<input type="image" src="">-->
+                            <input type="button"  style="font-size: medium;background: #d079ff" value="更改" onclick="modifproduce()">
+                            <input type="button"  style="font-size: medium;background: #d079ff;scroll-padding: 35px" value="取消" >
+                        </div>
+
+                    </div>
+                    <div class="swiper-wrapper">
+
+                            <!--<div class="swiper-slide bannerPic0" id="pic0">-->
+                                <!--<a href="/promotionDay.html" target="_blank"  onclick="Fai.logDog(4000088,7);"class="J_firstBannerRegLink"></a>-->
+                            <!--</div>-->
+                        <!--<div style="padding-left: 500px">-->
+                        <!--<iframe src="regist.html">-->
+
+                        <!--</iframe>-->
+
+                        <!--</div>-->
+
+                        <!--<div class="swiper-slide bannerPic1">-->
+                            <!--<a href="/marketing/index.html" target="_blank" onclick="Fai.logDog(4000088, 3);" class="J_firstBannerRegLink"></a>-->
+                        <!--</div>-->
+                        <!--<div class="swiper-slide bannerPic2">-->
+                            <!--<a href="/studentCommunity.jsp" target="_blank" onclick="Fai.logDog(4000088, 302);" class="J_firstBannerRegLink"></a>-->
+                        <!--</div>-->
+                    </div>
+                    <!--<div class="fk-index-arrow fk-index-arrow-pre" style="left: 20px;z-index: 9999; background: none; height: 100%;">-->
+                        <!--<div class="fk-index-arrow fk-index-arrow-pre"></div>-->
+                    <!--</div>&lt;!&ndash;左箭头&ndash;&gt;-->
+                    <!--<div class="fk-index-arrow fk-index-arrow-next" style="right: 20px;z-index:9999;background: none; height: 100%;">-->
+                        <!--<div class="fk-index-arrow fk-index-arrow-next"></div>-->
+                    <!--</div>&lt;!&ndash;右箭头&ndash;&gt;-->
+                </div>
+
+            </div>
+
+            <div class="clear"></div>
+
+            <!--<input type="hidden" th:value="${bianhao}" id="bianhao">-->
+        </div>
+
+    </div>
+</div>
+
+
+
+
+
+<script src="myjs/home2.js"></script>
+
+</body>
+</html>
+

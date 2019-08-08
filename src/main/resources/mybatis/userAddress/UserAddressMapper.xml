@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo2.dao.userAdddress.UserAddressMapper">
+    <resultMap id="BaseResultMap" type="com.example.demo2.entity.userAddress.UserAddress" >
+        <result column="ADDRESS_ID" property="addressId" jdbcType="INTEGER" />
+        <result column="APP_ID" property="appId" jdbcType="VARCHAR" />
+        <result column="ADDRESS" property="address" jdbcType="VARCHAR" />
+        <result column="IS_DEF" property="isDef" jdbcType="INTEGER" />
+        <result column="EXT1" property="ext1" jdbcType="VARCHAR" />
+        <result column="EXT2" property="ext2" jdbcType="VARCHAR" />
+        <result column="userId" property="userId" jdbcType="VARCHAR" />
+    </resultMap>
+    <select id="selectAll" resultMap="BaseResultMap" parameterType="java.lang.String">
+        select * from User_address  where APP_ID =#{appId} and userId=#{userId}
+
+    </select>
+
+
+    <select id="selectexplme" resultMap="BaseResultMap">
+        select * from User_address
+         where APP_ID =#{record.appId,jdbcType=VARCHAR}
+         and userId=#{record.userId,jdbcType=VARCHAR}
+        <if test="record.addressId != null and record.addressId !=''">
+        and ADDRESS_ID =#{record.addressId,jdbcType=VARCHAR}
+        </if>
+        <if test="record.isDef != null">
+        and IS_DEF=#{record.isDef,jdbcType=INTEGER}
+        </if>
+        <if test="record.ext1 != null and record.ext1 !=''">
+        and EXT1 =#{record.ext1,jdbcType=VARCHAR}
+        </if>
+        <if test="record.ext2 != null and record.ext2 !=''">
+        and EXT2 =#{record.price,jdbcType=VARCHAR}
+        </if>
+        <if test="record.address != null and record.address !=''">
+        and ADDRESS =#{record.address,jdbcType=VARCHAR}
+        </if>
+    </select>
+
+    <insert id="addUserAddress" parameterType="com.example.demo2.entity.userAddress.UserAddress">
+             insert into User_address (APP_ID, ADDRESS,IS_DEF,EXT1,EXT2,userId)
+    values (#{record.appId,jdbcType=VARCHAR},#{record.address,jdbcType=VARCHAR},#{record.isDef,jdbcType=INTEGER},
+             #{record.ext1,jdbcType=VARCHAR},#{record.ext2,jdbcType=VARCHAR}, #{record.userId,jdbcType=VARCHAR})
+    </insert>
+
+    <update id="updateAddress" parameterType="com.example.demo2.entity.userAddress.UserAddress">
+        update User_address set
+        <if test ="record.address!=null and record.address!=''">
+            ADDRESS = #{record.address,jdbcType=VARCHAR},
+        </if>
+        <if test="record.ext1!=null and record.ext2 !=''">
+            EXT1 =#{record.ext1.jdbcType=VARCHAR},
+        </if>
+        <if test="record.ext2!=null and record.ext2 !=''">
+            EXT2 =#{record.ext2.jdbcType=VARCHAR},
+        </if>
+        IS_DEF = #{record.isDef,jdbcType=INTEGER}
+
+        where  APP_ID=#{record.appId,jdbcType=VARCHAR}
+        and userId=#{record.userId,jdbcType=VARCHAR}
+        <if test="record.addressId!=null and record.addressId !=''">
+          and  ADDRESS_ID =#{record.addressId,jdbcType=VARCHAR}
+        </if>
+    </update>
+
+    <update id="updateNotDef" parameterType="java.lang.String">
+        update User_address set IS_DEF=0 where APP_ID=#{appId,jdbcType=VARCHAR}  and userId=#{userId,jdbcType=VARCHAR} and IS_DEF=1;
+    </update>
+
+    <delete id="deleteAddress" parameterType="com.example.demo2.entity.userAddress.UserAddress">
+        delete from User_address
+          where ADDRESS_ID =#{record.addressId,jdbcType=VARCHAR}
+        and APP_ID=#{record.appId,jdbcType=VARCHAR}
+         and userId=#{record.userId,jdbcType=VARCHAR}
+    </delete>
+
+</mapper>

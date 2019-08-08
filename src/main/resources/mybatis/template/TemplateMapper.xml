@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo2.dao.template.TemplateMapper">
+    <resultMap id="BaseResultMap" type="com.example.demo2.entity.template.Template" >
+        <result column="TEMPLATE_ID" property="TemplateId" jdbcType="VARCHAR" />
+        <result column="pageName" property="pageName" jdbcType="VARCHAR" />
+        <result column="pageSet" property="pageSet" jdbcType="VARCHAR" />
+        <result column="appId" property="appId" jdbcType="VARCHAR" />
+        <result column="ext1" property="ext1" jdbcType="VARCHAR" />
+        <result column="ext2" property="ext2" jdbcType="VARCHAR" />
+    </resultMap>
+    <select id="selectAll" resultMap="BaseResultMap" parameterType="java.lang.String">
+        select * from Template  where appId =#{appId}
+    </select>
+
+    <select id="selectTempId" resultType="java.lang.String">
+        select distinct TEMPLATE_ID from Template where appId=''
+    </select>
+
+
+    <select id="selectexplme" resultMap="BaseResultMap">
+        select * from Template
+         where appId =#{record.appId,jdbcType=VARCHAR}
+        <if test="record.TemplateId != null and record.TemplateId !=''">
+        and TEMPLATE_ID =#{record.TemplateId,jdbcType=VARCHAR}
+        </if>
+        <if test="record.pageName != null and record.pageName != ''">
+        and pageName=#{record.pageName,jdbcType=VARCHAR}
+        </if>
+        <if test="record.ext1 != null and record.ext1 !=''">
+        and ext1 =#{record.ext1,jdbcType=VARCHAR}
+        </if>
+        <if test="record.ext2 != null and record.ext2 !=''">
+        and ext2 =#{record.ext2,jdbcType=VARCHAR}
+        </if>
+        <if test="record.pageSet != null and record.pageSet !=''">
+        and pageSet =#{record.pageSet,jdbcType=VARCHAR}
+        </if>
+    </select>
+
+    <insert id="addTemplate" parameterType="com.example.demo2.entity.template.Template">
+             insert into Template (TEMPLATE_ID,EXT1,EXT2,pageName,pageSet,appId)
+    values (#{record.templateId,jdbcType=VARCHAR},#{record.ext1,jdbcType=VARCHAR},#{record.ext2,jdbcType=VARCHAR},
+    #{record.pageName,jdbcType=VARCHAR},#{record.pageSet,jdbcType=VARCHAR}, #{record.appId,jdbcType=VARCHAR})
+    </insert>
+
+
+
+    <delete id="deleteTemp" parameterType="com.example.demo2.entity.template.Template">
+        delete from Template
+          where appId =#{record.appId,jdbcType=VARCHAR}
+         and ext1=#{record.ext1,jdbcType=VARCHAR}
+    </delete>
+
+</mapper>

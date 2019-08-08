@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo2.dao.userTemp.UserTempMapper">
+    <resultMap id="BaseResultMap" type="com.example.demo2.entity.userTemp.UserTemp" >
+        <result column="USER_ID" property="userId" jdbcType="VARCHAR" />
+        <result column="PHONE" property="phone" jdbcType="VARCHAR" />
+        <result column="TEMPLATE_ID" property="templateId" jdbcType="VARCHAR" />
+        <result column="appId" property="appId" jdbcType="VARCHAR" />
+        <result column="EXT1" property="ext1" jdbcType="VARCHAR" />
+        <result column="EXT2" property="ext2" jdbcType="VARCHAR" />
+        <result column="appName" property="appName" jdbcType="VARCHAR" />
+    </resultMap>
+    <select id="selectAll" resultMap="BaseResultMap" parameterType="java.lang.String">
+        select * from USER_TEMP  where USER_ID =#{userId}
+    </select>
+
+
+    <select id="selectexplme" resultMap="BaseResultMap">
+        select * from USER_TEMP
+         where USER_ID =#{record.userId,jdbcType=VARCHAR}
+        <if test="record.templateId != null and record.templateId !=''">
+        and TEMPLATE_ID =#{record.templateId,jdbcType=VARCHAR}
+        </if>
+        <if test="record.appId != null and record.appId != ''">
+        and appId=#{record.appId,jdbcType=INTEGER}
+        </if>
+        <if test="record.ext1 != null and record.ext1 !=''">
+        and EXT1 =#{record.ext1,jdbcType=VARCHAR}
+        </if>
+        <if test="record.ext2 != null and record.ext2 !=''">
+        and EXT2 =#{record.price,jdbcType=VARCHAR}
+        </if>
+        <if test="record.appName != null and record.appName !=''">
+        and appName =#{record.appName,jdbcType=VARCHAR}
+        </if>
+    </select>
+
+    <insert id="addUserTemp" parameterType="com.example.demo2.entity.userTemp.UserTemp">
+             insert into USER_TEMP (appName, PHONE,TEMPLATE_ID,EXT1,EXT2,USER_ID,appId)
+    values (#{record.appName,jdbcType=VARCHAR},#{record.phone,jdbcType=VARCHAR},#{record.templateId,jdbcType=VARCHAR},
+             #{record.ext1,jdbcType=VARCHAR},#{record.ext2,jdbcType=VARCHAR}, #{record.userId,jdbcType=VARCHAR},
+             #{record.appId,jdbcType=VARCHAR})
+    </insert>
+
+    <update id="updateTemp" parameterType="com.example.demo2.entity.userTemp.UserTemp">
+        update USER_TEMP set
+        <if test ="record.phone!=null and record.phone!=''">
+            PHONE = #{record.phone,jdbcType=VARCHAR},
+        </if>
+        <if test="record.ext1!=null and record.ext2 !=''">
+            EXT1 =#{record.ext1.jdbcType=VARCHAR},
+        </if>
+        <if test="record.ext2!=null and record.ext2 !=''">
+            EXT2 =#{record.ext2.jdbcType=VARCHAR},
+        </if>
+        <if test="record.userId != null and record.userId!=''">
+            USER_ID=#{record.userId.jdbcType=VARCHAR}
+        </if>
+
+        where
+         USER_ID=#{record.userId,jdbcType=VARCHAR}
+
+    </update>
+
+
+
+    <delete id="deleteTemp" parameterType="com.example.demo2.entity.userTemp.UserTemp">
+        delete from USER_TEMP
+          where appId =#{record.appId,jdbcType=VARCHAR}
+         and USER_ID=#{record.userId,jdbcType=VARCHAR}
+    </delete>
+
+</mapper>

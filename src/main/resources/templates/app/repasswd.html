@@ -1,0 +1,100 @@
+<!doctype html>
+<!--<html class="no-js">-->
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="description" content=""/>
+    <meta name="keywords" content=""/>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+    <title>注册</title>
+    <meta name="renderer" content="webkit"/>
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+    <link rel="stylesheet" href="css/amazeui.min.css"/>
+    <link rel="stylesheet" href="css/app.css"/>
+    <script>
+        function login() {
+            window.location.href="/appGRZX"
+            window.event.returnValue=false;
+        }
+        function regist() {
+            alert("更改成功！");
+
+            // var username=$("#username").val();
+            // var passwd=$("#passwd").val();
+            // var pageData={
+            //     "username":username,
+            //     "passwd":passwd
+            // }
+            // $.ajax({
+            //     url : 'Customer/addCustomer',
+            //     method : 'post',
+            //     data : pageData,
+            //     traditional: true,
+            //     cache : false,
+            //     dataType : 'json',
+            //     success: function(result){//返回的参数就是 action里面所有的有get和set方法的参数
+            //         if (result.result == "success") {
+            //             alert("注册成功！");
+            //             window.location.href="/openPageHome?appId="+result.appId+"&bianhao="+result.bianhao;
+            //             window.event.returnValue=false;
+            //         }else {
+            //             alert("您已经注册过，请登录");
+            //         }
+            //
+            //     },
+            //     error : function(response) {
+            //         alert(response.errorMessage);
+            //         // window.location.href="/login";
+            //     }
+            // });
+        }
+    </script>
+</head>
+<body>
+<div class="am-g">
+    <!-- LOGO -->
+    <!--<div class="am-u-sm-12 am-text-center" >-->
+        <!--<i class="am-icon-twitch myapp-login-logo"></i>-->
+    <!--</div>-->
+    <!-- 登陆框 -->
+    <div class="am-u-sm-11 am-u-sm-centered">
+        <!--<form class="am-form">-->
+            <fieldset class="myapp-login-form am-form-set">
+                <!--<div class="am-form-group am-form-icon">-->
+                    <!--<i class="am-icon-user"></i>-->
+                    <!--<input type="text" id="username" class="myapp-login-input-text am-form-field" placeholder="请输入原密码" value=""/>-->
+                <!--</div>-->
+                <div class="am-form-group am-form-icon">
+                    <i class="am-icon-lock"></i>
+                    <input  type="password"  id="passwd" class="myapp-login-input-text am-form-field" placeholder="请输入原密码" value=""/>
+                </div>
+                <div class="am-form-group am-form-icon">
+                    <i class="am-icon-lock"></i>
+                    <input  type="password"  id="repasswd" class="myapp-login-input-text am-form-field" placeholder="请输入修改后的密码" value=""/>
+                </div>
+            </fieldset>
+            <!--<button type="submit" class="myapp-login-form-submit am-btn am-btn-primary am-btn-block ">登 陆</button>-->
+            <button  class="mmm"  id="qrgg" onclick="regist()">确认更改</button>
+
+        <button  class="mmm"  id="login" onclick="login()">取消</button>
+            <!--<a >点我注册</a>-->
+        <!--</form>-->
+    </div>
+
+
+</div>
+
+<!--[if (gte IE 9)|!(IE)]><!-->
+<script src="js/jquery.min.js"></script>
+<!--<![endif]-->
+<!--[if lte IE 8 ]>
+<script src="../../static/js/myjs/main/jquery.min.js"></script>
+<script src="../../../../../cdn.staticfile.org/modernizr/2.8.3/modernizr.js"></script>
+<script src="assets/js/amazeui.ie8polyfill.min.js"></script>
+<![endif]-->
+<script src="js/amazeui.min.js"></script>
+<script src="js/app.js"></script>
+<script src="myjs/login.js"></script>
+</body>
+</html>

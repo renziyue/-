@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo2.dao.producte.ProducteMapper">
+    <resultMap id="BaseResultMap" type="com.example.demo2.entity.producte.Producte" >
+        <result column="ID" property="id" jdbcType="VARCHAR" />
+        <result column="PRO_NAME" property="proName" jdbcType="VARCHAR" />
+        <result column="PRICE" property="price" jdbcType="DOUBLE" />
+        <result column="NUM" property="count" jdbcType="INTEGER" />
+        <result column="PRO_TYPE" property="proType" jdbcType="VARCHAR" />
+        <result column="PHONE" property="phone" jdbcType="VARCHAR" />
+        <result column="BIANHAO" property="bianHao" jdbcType="VARCHAR" />
+        <result column="EXT1" property="ext1" jdbcType="VARCHAR" />
+        <result column="EXT2" property="ext2" jdbcType="VARCHAR" />
+    </resultMap>
+    <select id="selectAll" resultMap="BaseResultMap">
+        select * from PRODOCTE  where PHONE =#{phone} and BIANHAO =#{bianHao}
+
+    </select>
+
+
+    <select id="selectexplme" resultMap="BaseResultMap">
+        select * from PRODOCTE  where PHONE =#{record.phone,jdbcType=VARCHAR}
+        <if test="record.bianHao != null and record.bianHao !=''">
+        and BIANHAO =#{record.bianHao,jdbcType=VARCHAR}
+        </if>
+        <if test="record.id != null and record.id !=''">
+        and ID=#{record.id,jdbcType=VARCHAR}
+        </if>
+        <if test="record.proName != null and record.proName !=''">
+        and PRO_NAME =#{record.proName,jdbcType=VARCHAR}
+        </if>
+        <if test="record.price != null and record.price !=''">
+        and PRICE =#{record.price,jdbcType=DOUBLE}
+        </if>
+        <if test="record.count != null and record.count !=''">
+        and NUM =#{record.count,jdbcType=INTEGER}
+        </if>
+        <if test="record.proType != null and record.proType !=''">
+        and PRO_TYPE=#{record.proType,jdbcType=VARCHAR}
+        </if>
+
+    </select>
+
+    <insert id="addprotype" parameterType="com.example.demo2.entity.protype.ProType">
+             insert into PRODOCTE (ID, PRO_NAME,PRICE,NUM,PRO_TYPE, PHONE,BIANHAO, EXT1, EXT2)
+    values (#{record.id,jdbcType=VARCHAR},#{record.proName,jdbcType=VARCHAR},#{record.price,jdbcType=DOUBLE},
+            #{record.count,jdbcType=INTEGER}, #{record.proType,jdbcType=VARCHAR}, #{record.phone,jdbcType=VARCHAR},
+            #{record.bianHao,jdbcType=VARCHAR}, #{record.ext1,jdbcType=VARCHAR}, #{record.ext2,jdbcType=VARCHAR})
+
+    </insert>
+
+    <update id="updateprotype" parameterType="com.example.demo2.entity.protype.ProType">
+        update PRODOCTE set
+
+        PRO_TYPE = #{record.proType,jdbcType=VARCHAR}
+
+        where ID =#{record.id,jdbcType=VARCHAR}
+        and PHONE=#{record.phone,jdbcType=VARCHAR}
+        and BIANHAO=#{record.bianHao,jdbcType=VARCHAR}
+    </update>
+
+    <delete id="deletetprotype" parameterType="com.example.demo2.entity.protype.ProType">
+        delete from PRODOCTE
+          where ID =#{record.id,jdbcType=VARCHAR}
+        and PHONE=#{record.phone,jdbcType=VARCHAR}
+        <if test="record.bianHao != null and record.bianHao!=''">
+            and BIANHAO=#{record.bianHao,jdbcType=VARCHAR}
+        </if>
+
+    </delete>
+
+    <select id="selectType" parameterType="com.example.demo2.entity.protype.ProType" resultType="java.lang.String">
+      select distinct PRO_TYPE from PRODOCTE where PHONE=#{record.phone,jdbcType=VARCHAR }
+      <if test="record.bianHao != null and record.bianHao != ''">
+          and BIANHAO =#{record.bianHao,jdbcType=VARCHAR}
+      </if>
+
+    </select>
+
+    <update id="updatepro" parameterType="com.example.demo2.entity.protype.ProType">
+update PRODOCTE set
+
+PRO_TYPE=#{record.proType},
+
+        PRO_NAME=#{record.proName},
+
+        PRICE=#{record.price},
+        NUM=#{record.count},
+        EXT1=#{record.ext1}
+        where PHONE=#{record.phone}
+        and BIANHAO=#{record.bianHao}
+        and ID=#{record.id}
+
+    </update>
+</mapper>

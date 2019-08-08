@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Foodie</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:200,300,400,500,600,700" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="mubanpage/css/owl.carousel.min.css">
+
+    <link rel="stylesheet" href="mubanpage/css/aos.css">
+
+    <link rel="stylesheet" href="mubanpage/css/style.css">
+
+    <link rel="stylesheet" href="tanchuang/css/style.css">
+
+    <script type="text/javascript" src="tanchuang/js/jquery.min.js"></script>
+    <script type="text/javascript" src="tanchuang/js/popups.js"></script>
+    <script type="text/javascript">
+        setSize();
+        addEventListener('resize',setSize);
+        function setSize() {
+            document.documentElement.style.fontSize = document.documentElement.clientWidth/750*100+'px';
+        }
+    </script>
+    <script type="text/javascript">
+        function clickTanC(templaeId) {
+            jqalert({
+                title:'提示',
+                prompt:'请给你的App起个名字吧！',
+                yestext:'提交',
+                notext:'取消',
+                yesfn:function () {
+                   var app=$("#name").val();
+                    // console.log(id);
+                    jqtoast('提交成功');
+                    parent.openTemplatePage(app,templaeId);
+                    // window.location.href="events.html";
+
+                },
+                nofn:function () {
+                    jqtoast('你点击了取消');
+                }
+            })
+        }
+
+        // });
+    </script>
+
+    <style>
+        .show-list{
+            width:60%;
+            margin: 0 auto;
+        }
+        .show-list li{
+            height: 1rem;
+            font-size: .3rem;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            border-bottom: 1px solid #dcdcdc;
+        }
+    </style>
+    <!--<script>-->
+        <!--function clickTanC() {-->
+            <!--window.location.href="events.html"-->
+            <!--// alert("xxx");-->
+        <!--}-->
+    <!--</script>-->
+</head>
+
+<body>
+
+
+
+    <section class="index-recipies">
+        <div class="container">
+            <h4 data-aos="fade-up" data-aos-duration="1000">请选择模板</h4>
+            <h6 data-aos="fade-up" data-aos-duration="1000">and am a food blogger, please feel free to check my latest food recipes
+            </h6>
+            <ul class="row">
+                <li class="col-sm-6 col-md-4">
+                    <figure data-aos="fade-up" data-aos-duration="800">
+                        <a href="#" data-toggle="lightbox" data-gallery="example-gallery">
+                            <img src="img/tempalteImg/one1.jpg" alt="one" class="img-responsive">
+                            <div class="overlay">
+                                <h5>How to make better breakfast with minimal items for 2 persons</h5>
+                                <span name="5485" onclick="clickTanC('5485')">点我创建</span>
+                            </div>
+                        </a>
+                    </figure>
+                </li>
+                <li class="col-sm-6 col-md-4">
+                    <figure data-aos="fade-up" data-aos-duration="1000">
+                        <a href="#" data-toggle="lightbox" data-gallery="example-gallery">
+                            <img src="img/tempalteImg/two.jpg" alt="two" class="img-responsive">
+                            <div class="overlay">
+                                <h5>How to make better breakfast with minimal items for 2 persons</h5>
+                                <span name="5485" onclick="clickTanC('5485')">点我创建</span>
+                            </div>
+                        </a>
+                    </figure>
+                </li>
+                <br>
+                <li class="col-sm-6 col-md-4">
+                    <figure data-aos="fade-up" data-aos-duration="1200">
+                        <a href="#" data-toggle="lightbox" data-gallery="example-gallery">
+                            <img src="img/tempalteImg/three.jpg" alt="three" class="img-responsive">
+                            <div class="overlay">
+                                <h5>How to make better breakfast with minimal items for 2 persons</h5>
+                                <!--<span>Posted on:3-8-2018</span>-->
+                                <span name="5485" onclick="clickTanC('5485')">点我创建</span>
+                            </div>
+                        </a>
+                    </figure>
+                </li>
+                <li class="col-sm-6 col-md-4">
+                    <figure data-aos="fade-up" data-aos-duration="800">
+                        <a href="#" data-toggle="lightbox" data-gallery="example-gallery">
+                            <img src="img/tempalteImg/four.jpg" alt="four" class="img-responsive">
+                            <div class="overlay">
+                                <h5>How to make better breakfast with minimal items for 2 persons</h5>
+                                <span>点我创建</span>
+                            </div>
+                        </a>
+                    </figure>
+                </li>
+                <li class="col-sm-6 col-md-4">
+                    <figure data-aos="fade-up" data-aos-duration="1000">
+                        <a href="#" data-toggle="lightbox" data-gallery="example-gallery">
+                            <img src="img/tempalteImg/five.jpg" alt="five" class="img-responsive">
+                            <div class="overlay">
+                                <h5>How to make better breakfast with minimal items for 2 persons</h5>
+                                <span>Posted on:3-8-2018</span>
+                                <span name="5485" onclick="clickTanC('5485')">点我创建</span>
+                            </div>
+                        </a>
+                    </figure>
+                </li>
+                <li class="col-sm-6 col-md-4">
+                    <figure data-aos="fade-up" data-aos-duration="1200">
+                        <a href="#" data-toggle="lightbox" data-gallery="example-gallery">
+                            <img src="img/tempalteImg/seven.jpg" alt="six" class="img-responsive">
+                            <div class="overlay">
+                                <h5>How to make better breakfast with minimal items for 2 persons</h5>
+                                <span>点我创建</span>
+                            </div>
+                        </a>
+                    </figure>
+                </li>
+                <li class="col-sm-6 col-md-4">
+                    <figure data-aos="fade-up" data-aos-duration="800">
+                        <a href="#" data-toggle="lightbox" data-gallery="example-gallery">
+                            <img src="img/tempalteImg/six.jpg" alt="seven" class="img-responsive">
+                            <div class="overlay">
+                                <h5>How to make better breakfast with minimal items for 2 persons</h5>
+                                <span>点我创建</span>
+                            </div>
+                        </a>
+                    </figure>
+                </li>
+                <li class="col-sm-6 col-md-4">
+                    <figure data-aos="fade-up" data-aos-duration="1000">
+                        <a href="#" data-toggle="lightbox" data-gallery="example-gallery">
+                            <img src="img/tempalteImg/one.jpg" alt="eight" class="img-responsive">
+                            <div class="overlay">
+                                <h5>How to make better breakfast with minimal items for 2 persons</h5>
+                                <span>点我创建</span>
+                            </div>
+                        </a>
+                    </figure>
+                </li>
+                <li class="col-sm-6 col-md-4">
+                    <figure data-aos="fade-up" data-aos-duration="1200">
+                        <a href="#" data-toggle="lightbox" data-gallery="example-gallery">
+                            <img src="img/tempalteImg/two.jpg" alt="nine" class="img-responsive">
+                            <div class="overlay">
+                                <h5>How to make better breakfast with minimal items for 2 persons</h5>
+                                <span>点我创建</span>
+                            </div>
+                        </a>
+                    </figure>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+
+
+
+
+
+
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+    <script src="mubanpage/js/owl.carousel.js"></script>
+    <script src="mubanpage/js/aos.js"></script>
+    <script src="mubanpage/js/script.js"></script>
+    <script>
+        jQuery(document).ready(function ($) {
+            $('.loop').owlCarousel({
+                center: true,
+                items: 2,
+                loop: true,
+                margin: 0,
+                // autoplay: true,
+                // slideTransition: 'linear',
+                // autoplayTimeout: 2000,
+                // autoplaySpeed: 1000,
+                // autoplayHoverPause: true,
+                responsive: {
+                    426: {
+                        items: 2
+                    },
+                    640: {
+                        items: 3
+                    },
+                    768: {
+                        items: 4
+                    },
+                }
+            });
+
+        });
+    </script>
+    
+</body>
+
+</html>

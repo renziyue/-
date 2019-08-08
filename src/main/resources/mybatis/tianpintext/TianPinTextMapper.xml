@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo2.dao.tianpintext.TianPinTextMapper">
+    <resultMap id="BaseResultMap" type="com.example.demo2.entity.tianpin_text.TianPinText" >
+        <result column="ID" property="id" jdbcType="VARCHAR" />
+        <result column="TYPE" property="type" jdbcType="VARCHAR" />
+        <result column="VALUE" property="value" jdbcType="VARCHAR" />
+        <result column="IS_URL" property="isUrl" jdbcType="VARCHAR" />
+        <result column="URL_SRC" property="urlSrc" jdbcType="VARCHAR" />
+        <result column="STYLE" property="style" jdbcType="VARCHAR" />
+        <result column="PHONE" property="phone" jdbcType="VARCHAR" />
+        <result column="BIANHAO" property="bianhao" jdbcType="VARCHAR" />
+        <result column="EXT1" property="ext1" jdbcType="VARCHAR" />
+        <result column="EXT2" property="ext2" jdbcType="VARCHAR" />
+    </resultMap>
+    <select id="selectAll" resultMap="BaseResultMap">
+        select * from TYPE_TEXT where 1=1
+        <if test="phone !='' and phone != null">
+            and PHONE =#{phone}
+        </if>
+        <if test="bianhao !='' and bianhao != null">
+            and BIANHAO =#{bianhao}
+        </if>
+    </select>
+    <insert id="insertTianPin" parameterType="com.example.demo2.entity.tianpin_text.TianPinText">
+        insert  into  TYPE_TEXT (ID, TYPE, VALUE,STYLE,PHONE,BIANHAO, EXT1, EXT2,IS_URL,URL_SRC)
+    values (#{record.id,jdbcType=VARCHAR}, #{record.type,jdbcType=VARCHAR},
+     #{record.value,jdbcType=VARCHAR}, #{record.style,jdbcType=VARCHAR} ,#{record.phone,jdbcType=VARCHAR},
+      #{record.bianhao,jdbcType=VARCHAR},  #{record.ext1,jdbcType=VARCHAR}, #{record.ext2,jdbcType=VARCHAR},
+       #{record.isUrl,jdbcType=VARCHAR}, #{record.urlSrc,jdbcType=VARCHAR})
+
+    </insert>
+
+    <select id="selectexpom" resultMap="BaseResultMap">
+        select * from TYPE_TEXT where 1=1
+        <if test="record.phone !='' and record.phone != null">
+            and PHONE =#{record.phone}
+        </if>
+        <if test="record.bianhao !='' and record.bianhao != null">
+            and BIANHAO =#{record.bianhao}
+        </if>
+        <if test="record.type !='' and record.type != null">
+            and TYPE =#{record.type}
+        </if>
+        <if test="record.isUrl !='' and record.isUrl != null">
+            and IS_URL =#{record.isUrl}
+        </if>
+        <if test="record.urlSrc !='' and record.urlSrc != null">
+            and URL_SRC =#{record.urlSrc}
+        </if>
+        <if test="record.value !='' and record.value != null">
+            and VALUE =#{record.value}
+        </if>
+        <if test="record.id !='' and record.id != null">
+            and ID =#{record.id}
+        </if>
+
+    </select>
+
+    <update id="upTianPin" parameterType="com.example.demo2.entity.tianpin_text.TianPinText">
+        update TYPE_TEXT set
+        <if test="record.type !='' and record.type != null">
+             TYPE =#{record.type},
+        </if>
+        <if test="record.isUrl !='' and record.isUrl != null">
+             IS_URL =#{record.isUrl},
+        </if>
+        <if test="record.urlSrc !='' and record.urlSrc != null">
+             URL_SRC =#{record.urlSrc},
+        </if>
+        <if test="record.value !='' and record.value != null">
+             VALUE =#{record.value}
+        </if>
+        where PHONE =#{record.phone} and BIANHAO=#{record.bianhao} and ID=#{record.id}
+    </update>
+</mapper>

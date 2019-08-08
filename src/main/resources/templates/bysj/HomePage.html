@@ -1,0 +1,196 @@
+
+<!doctype html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>做营销，上yyeyey网</title>
+    <meta content="always" name="referrer">
+    <link href="fanke/css/comm.min.css%3Fv=201902191012.css" rel="stylesheet" type="text/css" />
+    <script src="myjs/main/jquery.min.js"></script>
+    <!--<script src="myjs/home2.js"></script>-->
+
+    <script type="text/javascript" src="fanke/css/swiper.min.css%3Fv=201812171713.css"></script>
+    <link href="css/grzx/css/index_bg.css" rel="stylesheet" type="text/css" />
+    <link href="fanke/css/service.min.css%3Fv=201808201715.css" rel="stylesheet" type="text/css" />
+    <link href="fanke/css/fkwComm.min.css%3Fv=201901281724.css" rel="stylesheet" type="text/css" />
+    <link href="fanke/css/swiper.min.css%3Fv=201812171713.css" rel="stylesheet" type="text/css" />
+    <style type = "text/css">
+        *html{background-image:url(about:blank);background-attachment:fixed;}
+        body{overflow: hidden;}
+    </style>
+    <script>
+
+
+    </script>
+</head>
+<body class='fkw-body-container'>
+<!-- header -->
+
+<link type="text/css" href="fanke/css/header.min.css%3Fv=201812261443.css" rel="stylesheet">
+<!--nav start-->
+
+<div class="f-topBar f-fkw-topBar">
+    <div class="fkw-topbar-box">
+        <!--<div class="">-->
+            <img src="img/tempalteImg/two.jpg" style="height: 70px;width: 70px">
+        <!--</div>-->
+        <div class="f-topbar-right">
+
+            <div class="topbar-item topbar-item-aboutFKW ">
+                <div class="topbar_btn topbar_btn_aboutFKW">
+                    <i class="topbar_btn_icon_before"></i>
+                    <a href="#" target="_blank" class="topbar_btn_text">做APP就上月月网站</a>
+                    <i class="topbar_btn_icon_after"></i>
+                </div>
+            </div>
+            <div class="opPanel" id="userlogin">
+                <div class="topbar-item topbar-item-registerCenter">
+                    <div class="topbar_btn topbar_btn_registerCenter">
+                        <i class="topbar_btn_icon_before"></i>
+                        <a href="/regist"  target="_blank" class="topbar_btn_text">免费注册</a>
+                        <i class="topbar_btn_icon_after"></i>
+                    </div>
+                </div>
+                <div class="topbar-item topbar-item-loginCenter">
+                    <div class="topbar_btn topbar_btn_loginCenter">
+                        <i class="topbar_btn_icon_before"></i>
+                        <a href="/login"  target="_blank" class="topbar_btn_text">登录</a>
+                        <i class="topbar_btn_icon_after"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="opPanel" id="user">
+                <div class="topbar-item topbar-item-registerCenter">
+                    <div class="topbar_btn topbar_btn_registerCenter">
+                        <i class="topbar_btn_icon_before"></i>
+                    用户：<input type="text" th:value="${name}" id="userName" style="font-size: large;width: 60px;height: 70px;background:transparent;border:0 solid #ffffff">欢迎您
+
+                        <i class="topbar_btn_icon_after"></i>
+                    </div>
+                </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+<!--nav end-->
+
+<!--banner start-->
+<div class="clear"></div>
+<div class="fk-banner fk-banner-index">
+    <div class='fkw-panel-1th'>
+        <div class='fkw-panel-bg' style="height: 590px;"></div>
+        <div class="fkw-ban-container" style="height: 510px;">
+            <div class="fkProductNav" style="width: 150px">
+                <div class='fkProductNav-title'>业务操作</div>
+                <ul class="fkProductNav-ul">
+                    <li class="fkw-li-site" style="padding-top: 10px">
+                        <!--<a target="_blank" href="//jz.fkw.com" onclick="Fai.logDog(4000088,12);">-->
+                            <span class="fkw-nav-icon" onclick="openTemplate()">查看模板</span>
+
+
+
+                    </li>
+                    <li class="fkw-li-site" style="padding-top: 10px">
+                        <!--<a target="_blank" href="//jz.fkw.com" onclick="Fai.logDog(4000088,12);">-->
+                        <span class="fkw-nav-icon" onclick="gotoHouTai()">进入后台</span>
+
+                    </li>
+                    <li class="fkw-li-site" style="padding-top: 10px">
+                        <!--<a target="_blank" href="//jz.fkw.com" onclick="Fai.logDog(4000088,12);">-->
+                        <span class="fkw-nav-icon" onclick="gotoGRZX()">个人中心</span>
+
+
+                    </li>
+
+
+                </ul>
+
+            </div>
+
+
+
+            <div class='fkProductBan'  style="height: 500px;padding-left: 20"  >
+
+                <div id="swiper-container" class="fk-index-sliderPanel" style="height:560px;width: 900px">
+                    <div >
+
+                        <iframe src="" id="frame1" name="abc" style="height: 540px; width: 1200px" >
+
+                        </iframe>
+                        <img src="img/homeImg/home.jpg"  style="height: 540px; width: 1200px;padding-left: 20" id="homeImg">
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="clear"></div>
+
+        </div>
+
+    </div>
+</div>
+
+
+<script>
+    init();
+    function init() {
+        var xx=$("#userName").val();
+        console.log(xx);
+        if(xx!=""){
+            $("#userlogin").hide();
+            $("#user").show();
+        }else {
+            $("#userlogin").show();
+            $("#user").hide();
+        }
+        $("#frame1").hide();
+        $("#homeImg").show();
+    }
+    function openTemplate() {
+        $("#frame1").show();
+        $("#homeImg").hide();
+        $("#frame1").attr("src","/template");
+
+    }
+
+    function gotoHouTai() {
+        window.location.href="/houtaihome";
+        window.event.returnValue=false;
+    }
+
+    function gotoGRZX() {
+        // window.location.href="/myapp";
+        // window.event.returnValue=false;
+        $("#frame1").show();
+        $("#homeImg").hide();
+        $("#frame1").attr("src","/myapp");
+    }
+
+    function openTemplatePage(app,templateId) {
+        console.log(app+"================="+templateId);
+        window.location.href="/selectTemplateHome?appName="+app+"&templateId="+templateId;
+        window.event.returnValue=false;
+    }
+
+    function openApp(id) {
+        // console.log(id+"================="+templateId);
+        window.location.href="/selectTemplateHome1?appId="+id;
+        window.event.returnValue=false;
+    }
+
+</script>
+
+<!--<script src="myjs/homePage.js"></script>-->
+
+
+</body>
+</html>
+

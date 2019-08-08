@@ -1,0 +1,205 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+<!-- 启用极速模式(webkit) -->
+<meta name="renderer" content="webkit">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+<!--  -->
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="KeyWords" content="首页">
+<meta name="description" content="首页">
+<title>首页</title>
+<link rel="shortcut icon" type="image/x-icon" href="img/upimages/favicon.ico" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="format-detection" content="telephone=no" />
+<meta name='apple-touch-fullscreen' content='yes' />
+<meta name="full-screen" content="yes">
+	<!-- SEO友好提示 -->
+	<!--<meta name="applicable-device" content="pc,mobile">-->
+	<!--[if lt IE 9]>
+	<script type="text/javascript" src="../js/comm/html5shiv.js"></script>
+	<script type="text/javascript" src="../js/comm/respond.min.js"></script>
+	<![endif]-->
+<script type="text/javascript" src="tianpin/js/comm/jquery.min.js"></script>
+<script type="text/javascript" src="tianpin/js/comm/jquery.lazyload.min.js"></script>
+<script type="text/javascript" src="tianpin/js/comm/jquery.nicescroll.min.js"></script>
+<script type="text/javascript" src="tianpin/js/comm/ubox.js" charset="utf-8"></script>
+<script type="text/javascript" src="tianpin/js/comm/wow.js" charset="utf-8"></script>
+<script type="text/javascript" src="tianpin/js/comm/alert.js" charset="utf-8"></script>
+<!--<script type="text/javascript" src="tianpin/js/061708.js" charset="utf-8"></script>-->
+<link rel="stylesheet" type="text/css" href="css/tianpin/css/comm/font/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="css/tianpin/css/comm/animate.min.css"/>
+<link rel="stylesheet" type="text/css" href="css/tianpin/css/comm/box.css"/>
+<link rel="stylesheet" type="text/css" href="css/tianpin/css/comm/alert.css"/>
+<link rel="stylesheet" type="text/css" href="css/tianpin/css/061708.css"/>
+	<link rel="stylesheet" type="text/css" href="css/grzx/css/grzx.css">
+	<link href="css/mycss/index.css" rel="stylesheet" type="text/css">
+	<link href="css/mycss/index_back.css" rel="stylesheet" type="text/css">
+	<link href="css/mycss/preset.css" rel="stylesheet" type="text/css">
+
+<script>
+//是否手机端判断
+var ua = navigator.userAgent;
+var ipad = ua.match(/(iPad).*OS\s([\d_]+)/),
+isIphone =!ipad && ua.match(/(iPhone\sOS)\s([\d_]+)/),
+isAndroid = ua.match(/(Android)\s+([\d.]+)/),
+isMobile = isIphone || isAndroid;
+if(isMobile){
+	$("head").append("<meta content='width=320,user-scalable=no' name='viewport'>");
+}else{
+	$("head").append("<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no' name='viewport' />");
+}
+</script>
+<script>
+if (!(/msie [6|7|8|9]/i.test(navigator.userAgent))){
+	new WOW().init();
+};
+// var DIY_WEBSITE_ID = "1114";
+// var DIY_JS_SERVER = "s143js.nicebox.cn";
+</script>
+</head>
+<body>
+<footer style="background: #d6c46a; z-index:999">
+		<a href="#" onclick="addCar()"><i class="iconfont">&#xe60b;</i>加入购物车</a>
+		<a href="#" onclick="buyPro()" style="padding-left: 155px"><i class="iconfont">&#xe617;</i>购买</a>
+
+</footer>
+
+<input type="hidden" th:value="${phone}">
+<input type="hidden" th:value="${bianhao}">
+<input type="hidden" th:value="${id}" id="proid">
+
+
+
+	<script type="text/javascript">var Default_isFT = 0;</script>
+
+	<div id="layout_1495448887746" class="layout "  data-wow-duration='0s' data-wow-delay='0s' data-wow-offset='0' data-wow-iteration='1'>
+		<div class="view_contents">
+
+			<div class="">
+				<div>
+					<img th:src="${prosrc}" style="width: 70%;height: 45%;padding-left: 50px;padding-top: 20px">
+					<!--<img src="img/tianpin/img/hh.png" style="width: 70%;height: 45%;padding-left: 50px;padding-top: 20px">-->
+				</div>
+				<div class="top-part clearfix">
+					<!--<li >-->
+						<div >
+							<span style="font-size: 30px">pres：</span>
+							<!--<span style="font-size: 30px"></span>-->
+							<input type="text" style="font-size: 30px;background:transparent;border:0 solid #ffffff" th:value="${proprice}" id="price">
+						</div>
+
+					<!--</li>-->
+
+				</div>
+				<div style="border:0px solid #F00">
+					<div>
+						<div class="" >
+							<div>
+          <span style="padding-left: 30%;font-size: 20px">
+              商品属性
+          </span>
+							</div >
+
+							<div>
+								<!--<img src="http://localhost/xiumin.png">-->
+							</div>
+
+							<div class="top-part clearfix" style="padding-left: 20%">
+								<li class="form-items clearfix">
+									<div >
+										<span style="font-size: 15px">库存：</span>
+										<!--<p style="font-size: 15px;padding-left: 70px"  th:text="${value}" ></p>-->
+										<input type="text" th:value="${pronum}" id="kc" style="background:transparent;border:0 solid #ffffff">
+									</div>
+								</li>
+
+							</div>
+
+
+							<div class="top-part clearfix" style="padding-left: 20%">
+								<li class="form-items clearfix">
+									<div>
+										<span style="font-size: 15px">名称：</span>
+										<!--<span style="font-size: 50px;padding-left: 150px" >99</span>-->
+										<input type="text" th:value="${proname}" id="lx" style="background:transparent;border:0 solid #ffffff" >
+
+									</div>
+
+								</li>
+
+							</div>
+							<div class="top-part clearfix" style="padding-left: 20%">
+								<li class="form-items clearfix">
+									<div >
+										<span style="font-size: 15px">分类：</span>
+										<!--<span style="font-size: 50px;padding-left: 150px" >99</span>-->
+										<input type="text" th:value="${protype}" id="fl" style="background:transparent;border:0 solid #ffffff" >
+									</div>
+
+								</li>
+
+							</div>
+
+							<div class="top-part clearfix" style="padding-left: 20%">
+								<li class="form-items clearfix">
+									<div>
+										<span style="font-size: 15px">其他：</span>
+										<!--<span style="font-size: 50px;padding-left: 150px" >99</span>-->
+										<input type="text" th:value="${proext}" id="qt" style="background:transparent;border:0 solid #ffffff" >
+
+									</div>
+
+								</li>
+
+							</div>
+
+						</div>
+
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+
+
+
+	<!-- -&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;-->
+	<div id="layout_1495447384942" class="layout "  data-wow-duration='0s' data-wow-delay='0s' data-wow-offset='0' data-wow-iteration='1'>
+		<div class="view_contents">
+
+
+
+		</div>
+	</div>
+
+
+
+
+
+
+
+					<script type="text/javascript">
+$(function(){//有客户需求，点击分页之后回到顶部
+	$(".paging").click(function(){
+		scrollTo(0,0);
+	})
+})
+function is_mobile(){
+	return window.screen.width<767 || ($('body').width() > 0 && $('body').width() < 767);
+}
+</script>
+
+
+
+
+
+
+
+		<script src="app/buy.js"></script>
+
+</body>
+</html>

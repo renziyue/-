@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html xmlns:td="http://www.w3.org/1999/xhtml" xmlns:th="http://www.w3.org/1999/xhtml"
+      xmlns:text-align="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1, width=device-width, maximum-scale=1, user-scalable=no">
+    <title>我的App</title>
+    <link rel="stylesheet" type="text/css" href="css/grzx/css/grzx.css">
+    <script>
+    </script>
+</head>
+<body>
+
+<!--<div>-->
+    <!--<div>-->
+        <!--<img style="width: 40px;height: 20px;padding-top: 5px;padding-left: 2px" src="img/tianpin/img/hh.png" onclick="">-->
+        <!--<input type="text" readonly="readonly" style="background:transparent;border:0 solid #ffffff;font-size: x-large;text-align: center;padding-top: 20px" value="我的地址管理" >-->
+    <!--</div>-->
+
+<!--</div>-->
+
+<!--<button onclick="addproducter()">tianjia</button>-->
+<aside>
+
+    <ul id="addresslist" style="background-color: #f9f9f9">
+
+
+    </ul>
+    <!--<div style="padding-top: 20px">-->
+        <!--<button onclick="gotoaddress()">添加新地址</button>-->
+    <!--</div>-->
+
+</aside>
+<div style="height: 1rem;"></div>
+<!--<footer >-->
+<!--<a href="javascript:;"><i class="iconfont">&#xe60b;</i>首页</a>-->
+<!--<a href="javascript:;"><i class="iconfont">&#xe75f;</i>分类</a>-->
+<!--<a href="javascript:;"><i class="iconfont">&#xe671;</i>购物车</a>-->
+<!--<a href="javascript:;"><i class="iconfont">&#xe617;</i>我的</a>-->
+<!--</footer>-->
+<script  src="tianpin/js/comm/jquery.min.js"></script>
+<script>
+    selectApp();
+    function openApp(id) {
+        // console.log(id+"================="+templateId);
+        window.location.href="/selectTemplateHome1?appId="+id;
+        window.event.returnValue=false;
+    }
+
+
+    function selectApp() {
+        $.ajax({
+            url : 'userTemp/selectApp',
+            method : 'post',
+            data : {},
+            traditional: true,
+            cache : false,
+            dataType : 'json',
+            success: function(result){//返回的参数就是 action里面所有的有get和set方法的参数
+                if (result.result == "success") {
+                    var  list=result.list;
+                    var   conut=result.count;
+
+                    if(conut=0){
+                        $("#addresslist").append("您还未创建App");
+                        return;
+                    }
+                    for(var i in list){
+                        var addresslists="<li>"
+                            + " <div  style=\"background-color: #f9f9f9\">\n" +
+                            "  <label>"+list[i].appName+"</label>\n"
+                            +"<input type=\"button\" onclick='openApp("+list[i].appId+")' value=\"编辑\" style=\"vertical-align: middle;background-color: #f9f9f9;padding-left: 20%" +
+                            "\"  + </div></li>" ;
+                        $("#addresslist").append(addresslists);
+                    }
+                }
+
+            },
+            error : function(response) {
+                alert('失败');
+            }
+        });
+    }
+</script>
+<!--<script type="text/javascript" src="sjld/js/js/addaddress1.js"></script>-->
+</body>
+</html>

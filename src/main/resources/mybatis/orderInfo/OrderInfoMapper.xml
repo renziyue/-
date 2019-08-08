@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo2.dao.orderInfo.OrderInfoMapper">
+    <resultMap id="BaseResultMap" type="com.example.demo2.entity.order.OrderInfo" >
+        <result column="ORDER_ID" property="orderId" jdbcType="INTEGER" />
+        <result column="APP_ID" property="appId" jdbcType="VARCHAR" />
+        <result column="USER_ID" property="userId" jdbcType="VARCHAR" />
+        <result column="ORDER_PRICE" property="orderPrice" jdbcType="DOUBLE" />
+        <result column="ORDER_NAME" property="orderName" jdbcType="VARCHAR" />
+        <result column="ORDER_NUM" property="orderNum" jdbcType="INTEGER" />
+        <result column="ORDER_TYPE" property="orderType" jdbcType="VARCHAR" />
+        <result column="ORDER_EXT1" property="orderext1" jdbcType="VARCHAR" />
+        <result column="createTime" property="createTime" jdbcType="TIMESTAMP" />
+    </resultMap>
+    <select id="selectAll" resultMap="BaseResultMap" parameterType="java.lang.String">
+        select * from USER_ORDER  where APP_ID =#{appId}
+        <if test=" customerId != null and customerId!=''">
+            and USER_ID=#{customerId}
+        </if>
+
+    </select>
+
+    <select id="countNum"  resultType="java.lang.Integer" parameterType="java.lang.String">
+        select  COUNT(ORDER_ID) from USER_ORDER where APP_ID=#{appId}
+    </select>
+
+    <select id="sumPrice"  resultType="java.lang.Double" parameterType="java.lang.String">
+        select  sum(ORDER_NUM*ORDER_PRICE) from USER_ORDER where APP_ID=#{appId}
+    </select>
+
+    <insert id="addorderInfo" parameterType="com.example.demo2.entity.order.OrderInfo">
+             insert into USER_ORDER (APP_ID, USER_ID,ORDER_NAME,ORDER_NUM,ORDER_PRICE,ORDER_EXT1,ORDER_TYPE,createTime)
+    values (#{record.appId,jdbcType=VARCHAR},#{record.userId,jdbcType=VARCHAR},#{record.orderName,jdbcType=VARCHAR},
+             #{record.orderNum,jdbcType=INTEGER},#{record.orderPrice,jdbcType=DOUBLE}, #{record.orderext1,jdbcType=VARCHAR},
+             #{record.orderType,jdbcType=VARCHAR},#{record.createTime,jdbcType=TIMESTAMP})
+    </insert>
+
+
+
+
+
+    <delete id="deleteOrderInfo" parameterType="com.example.demo2.entity.order.OrderInfo">
+        delete from USER_ORDER
+          where APP_ID =#{record.appId,jdbcType=VARCHAR}
+         and ORDER_ID=#{record.orderId,jdbcType=INTEGER}
+    </delete>
+
+</mapper>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo2.dao.customerInfo.CustomerInfoMapper">
+    <resultMap id="BaseResultMap" type="com.example.demo2.entity.customerInfo.CustomerInfo" >
+        <result column="customerId" property="customerId" jdbcType="VARCHAR" />
+        <result column="customerPhone" property="customerPhone" jdbcType="VARCHAR" />
+        <result column="customePasswd" property="customePasswd" jdbcType="VARCHAR" />
+        <result column="appId" property="appId" jdbcType="VARCHAR" />
+        <result column="EXT1" property="ext1" jdbcType="VARCHAR" />
+        <result column="EXT2" property="ext2" jdbcType="VARCHAR" />
+        <result column="customerKey" property="customerKey" jdbcType="VARCHAR" />
+        <result column="createTime" property="createTime" jdbcType="TIMESTAMP" />
+    </resultMap>
+    <select id="selectAll" resultMap="BaseResultMap" parameterType="java.lang.String">
+        select * from CUSTOMER_INFO  where appId =#{appId}
+    </select>
+
+    <select id="countNum"  resultType="java.lang.Integer" parameterType="java.lang.String">
+        select  COUNT(customerId) from CUSTOMER_INFO where appId=#{appId}
+    </select>
+
+
+    <select id="selectCustomer"  resultMap="BaseResultMap" parameterType="java.lang.String">
+        select  * from CUSTOMER_INFO where appId=#{appId} and customerPhone=#{customerPhone} and
+        customePasswd =#{customerPasswd}
+    </select>
+
+
+
+
+    <insert id="addcustomerInfo" parameterType="com.example.demo2.entity.customerInfo.CustomerInfo">
+             insert into CUSTOMER_INFO (customerId, customerPhone,customePasswd,EXT1,EXT2,customerKey,appId,createTime)
+    values (#{record.customerId,jdbcType=VARCHAR},#{record.customerPhone,jdbcType=VARCHAR},#{record.customePasswd,jdbcType=VARCHAR},
+             #{record.ext1,jdbcType=VARCHAR},#{record.ext2,jdbcType=VARCHAR}, #{record.customerKey,jdbcType=VARCHAR},
+             #{record.appId,jdbcType=VARCHAR},#{record.createTime,jdbcType=TIMESTAMP})
+    </insert>
+
+
+
+
+
+    <delete id="deleteCustomerInfo" parameterType="com.example.demo2.entity.customerInfo.CustomerInfo">
+        delete from CUSTOMER_INFO
+          where appId =#{record.appId,jdbcType=VARCHAR}
+         and customerId=#{record.customerId,jdbcType=VARCHAR}
+    </delete>
+
+</mapper>

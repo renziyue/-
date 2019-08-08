@@ -1,0 +1,578 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+<!-- 启用极速模式(webkit) -->
+<meta name="renderer" content="webkit">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+<!--  -->
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="KeyWords" content="首页">
+<meta name="description" content="首页">
+<title>首页</title>
+<link rel="shortcut icon" type="image/x-icon" href="img/upimages/favicon.ico" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="format-detection" content="telephone=no" />
+<meta name='apple-touch-fullscreen' content='yes' />
+<meta name="full-screen" content="yes">
+	<!-- SEO友好提示 -->
+	<!--<meta name="applicable-device" content="pc,mobile">-->
+	<!--[if lt IE 9]>
+	<script type="text/javascript" src="../js/comm/html5shiv.js"></script>
+	<script type="text/javascript" src="../js/comm/respond.min.js"></script>
+	<![endif]-->
+<script type="text/javascript" src="tianpin/js/comm/jquery.min.js"></script>
+<script type="text/javascript" src="tianpin/js/comm/jquery.lazyload.min.js"></script>
+<script type="text/javascript" src="tianpin/js/comm/jquery.nicescroll.min.js"></script>
+<script type="text/javascript" src="tianpin/js/comm/ubox.js" charset="utf-8"></script>
+<script type="text/javascript" src="tianpin/js/comm/wow.js" charset="utf-8"></script>
+<script type="text/javascript" src="tianpin/js/comm/alert.js" charset="utf-8"></script>
+<script type="text/javascript" src="tianpin/js/061708.js" charset="utf-8"></script>
+<link rel="stylesheet" type="text/css" href="css/tianpin/css/comm/font/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="css/tianpin/css/comm/animate.min.css"/>
+<link rel="stylesheet" type="text/css" href="css/tianpin/css/comm/box.css"/>
+<link rel="stylesheet" type="text/css" href="css/tianpin/css/comm/alert.css"/>
+<link rel="stylesheet" type="text/css" href="css/tianpin/css/061708.css"/>
+	<link rel="stylesheet" type="text/css" href="css/grzx/css/grzx.css">
+
+<script>
+//是否手机端判断
+var ua = navigator.userAgent;
+var ipad = ua.match(/(iPad).*OS\s([\d_]+)/),
+isIphone =!ipad && ua.match(/(iPhone\sOS)\s([\d_]+)/),
+isAndroid = ua.match(/(Android)\s+([\d.]+)/),
+isMobile = isIphone || isAndroid;
+if(isMobile){
+	$("head").append("<meta content='width=320,user-scalable=no' name='viewport'>");
+}else{
+	$("head").append("<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no' name='viewport' />");
+}
+</script>
+<script>
+if (!(/msie [6|7|8|9]/i.test(navigator.userAgent))){
+	new WOW().init();
+};
+// var DIY_WEBSITE_ID = "1114";
+// var DIY_JS_SERVER = "s143js.nicebox.cn";
+</script>
+</head>
+<body>
+<footer style="background: #d6c46a; z-index:999">
+		<a href="/appCommPage?page=首页"><i class="iconfont">&#xe60b;</i>首页</a>
+		<a href="/appCommPage?page=产品页"><i class="iconfont">&#xe75f;</i>分类</a>
+		<a href="appOrderPage:;"><i class="iconfont">&#xe671;</i>购物车</a>
+		<a href="appGRZX"><i class="iconfont">&#xe617;</i>我的</a>
+
+</footer>
+
+
+<!--<div id="bianji" style="z-index:999">-->
+	<!--<div id="neirong">-->
+		<!--<span>内容:</span><input type="text" id="bjvalue" value=""/>-->
+	<!--</div>-->
+
+
+	<!--&lt;!&ndash;<div id="lianjie">&ndash;&gt;-->
+		<!--&lt;!&ndash;<div class="form-left">&ndash;&gt;-->
+			<!--&lt;!&ndash;<span>是否作为链接：</span>&ndash;&gt;-->
+		<!--&lt;!&ndash;</div>&ndash;&gt;-->
+	<!--&lt;!&ndash;<input id="islianjie" value="" placeholder="是/否" />&ndash;&gt;-->
+	<!--&lt;!&ndash;</div>&ndash;&gt;-->
+	<!--<div id="upload">-->
+		<!--<button id="uploadfile">点此上传图片</button>-->
+		<!--<input type="hidden" value="" id="uploadname"/>-->
+	<!--</div>-->
+	<!--&lt;!&ndash;<div id="pic">&ndash;&gt;-->
+		<!--&lt;!&ndash;<span>链接地址</span>&ndash;&gt;-->
+		<!--&lt;!&ndash;<input type="text" id="urltext" value=""/>&ndash;&gt;-->
+
+	<!--&lt;!&ndash;</div>&ndash;&gt;-->
+	<!--<div id="buttonz">-->
+		<!--<input type="button" value="保存" onclick=""/>-->
+
+		<!--<input type="button" value="取消"/>-->
+	<!--</div>-->
+<!--&lt;!&ndash;</div>&ndash;&gt;<button onclick="updataData()" id="baocunwenjian">dianwoceshi</button>-->
+<!--<button onclick="childToP()">testfather</button>-->
+<input type="hidden" th:value="${bianhao}" id="bianhao">
+<input type="hidden" th:value="${phone}" id="phone">
+<input type="hidden" th:value="${storeId}" id="storeId">
+
+
+
+	<script type="text/javascript">var Default_isFT = 0;</script>
+<script type="text/javascript" src="tianpin/js/comm/transform.js"></script>
+			<div id="comm_layout_header" class="layout  none"  data-wow-duration='0s' data-wow-delay='0s' data-wow-offset='0' data-wow-iteration='1'>
+				<!--<div class="view_contents" style="height: 700px">-->
+					<div id="div_includeBlock_1492054720583" class="view includeBlock div  none includeView"  data-wow-duration='0s' data-wow-delay='0s' data-wow-offset='0' data-wow-iteration='1'>
+						<div names="div" class="view_contents" >
+							<div id="dh_style_01_1495502294245" class="view style_01 dh  none lockHeightView"  data-wow-duration='0s' data-wow-delay='0s' data-wow-offset='0' data-wow-iteration='1'>
+								<div names="dh" class="view_contents" >
+									<div id="menu" class="menu menuStyle_1">
+										<div class="menuLayout">
+											<ul class="miniMenu columnSet showmobile">
+												<li class="leftBox">
+													<div class="nav"></div>
+													<div class="sidebar icoMenuSet" onclick="setDhListen('style_01',this)">=</div>
+													<div class="menuScroll">
+														<ul class="menuUlCopy">
+															<li id="hot" class="rflex" pageid="61708" showmobile=""><a class="mainMenuSet" href="/appCommPage?page=首页">首页
+                                                                <!--<input type="text"  id="textxx" value="去购买" style="background:transparent;border:0 solid #ffffff"/>-->
+                                                            </a>
+															</li>
+															<li class="rflex" pageid="61700" showmobile=""><a class="mainMenuSet" href="/appCommPage?page=indexgrzx">个人中心</a>
+															</li>
+															<li class="rflex" pageid="61705" showmobile=""><a class="mainMenuSet" href="/appCommPage?page=产品页">产品中心</a>
+															</li>
+															<!--<li class="rflex" pageid="61709" showmobile=""><a class="mainMenuSet" href="news.html">新闻资讯</a>-->
+															<!--</li>-->
+															<!--<li class="rflex" pageid="61706" showmobile=""><a class="mainMenuSet" href="aboutUs.html">关于我们</a>-->
+															<!--</li>-->
+															<li class="rflex" pageid="61704" showmobile=""><a class="mainMenuSet" href="contactUs.html">联系我们</a>
+															</li>
+														</ul>
+													</div>
+												</li>
+											</ul>
+										</div>
+									</div>
+<!-- 菜单区域 End-->
+								</div>
+							</div>
+							<div id="image_logo_1495604573754" class="view logo image  none"  data-wow-duration='0s' data-wow-delay='0s' data-wow-offset='0' data-wow-iteration='1'>
+								<div names="image" class="view_contents" >
+									<div class="logoStyle modSet">
+										<a href='index.html' target="_self">
+											<img class="imgSet" isUrl="yes" id="img40" src="img/tianpin/img/logo.png@1505463977" title="" alt="" style="width:100%; height:auto" onclick="exitpic(this.id)"/>
+										</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+	<div id="layout_1495444851029" class="layout  none"  data-wow-duration='0s' data-wow-delay='0s' data-wow-offset='0' data-wow-iteration='1'>
+		<div class="view_contents">
+			<div id="tab_style_03_1495445214986" class="view style_03 tab  none includeView"  data-wow-duration='0s' data-wow-delay='0s' data-wow-offset='0' data-wow-iteration='1'>
+				<div names="tab" class="view_contents" >
+					<script></script>
+					<div id="div_tab_style_03_1495445214986" class="niceTab tabStyle_3">
+						<div class="tab_box tab_box_top" style="">
+							<div class="tab_content">
+								<div class="tab_main niceTabContent tabconSet">
+									<div class="tab_div niceTabShow">
+								<div id="image_style_01_1495445230745" class="view style_01 image  none"  data-wow-duration='0s' data-wow-delay='0s' data-wow-offset='0' data-wow-iteration='1'>
+									<div names="image" class="view_contents" >
+										<div class="imgStyle CompatibleImg">
+											<a href='javascript:;' target="">
+												<img class="picSet link-type-" id="text13" src="img/tianpin/img/hh.png" title="" alt="描述" onclick="exitpic(this.id)" />
+											</a>
+										</div>
+										<!-- 新加的js  -->
+									</div>
+								</div>
+										<div id="text_style_02_1495446560167" class="view style_02 text  none wow fadeInUp lockHeightView"  data-wow-duration='1s' data-wow-delay='1s' data-wow-offset='0' data-wow-iteration='1'>
+											<div names="text" class="view_contents" >
+												<!--一口一心，让人喜欢不已-->
+												<input  class="sss"type="text"  id="text1" value="一口一心，让人喜欢不已" style="background:transparent;border:0 solid #ffffff;color: red" onclick="exitpic(this.id)"/>
+											</div>
+										</div>
+										<div id="text_style_02_1495446502508" class="view style_02 text  none wow fadeInDown lockHeightView"  data-wow-duration='1s' data-wow-delay='0.25s' data-wow-offset='0' data-wow-iteration='1'>
+											<div names="text" class="view_contents" >
+												<input class="sss" type="text"  id="text2" value="点我编辑文字" style="background:transparent;border:0 solid #ffffff;color: red" />
+											</div>
+										</div>
+
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="layout_1495448887746" class="layout "  data-wow-duration='0s' data-wow-delay='0s' data-wow-offset='0' data-wow-iteration='1'>
+		<div class="view_contents">
+			<div id="text_style_07_1495511938668" class="view style_07 text  none wow fadeInLeft lockHeightView"  data-wow-duration='1s' data-wow-delay='1s' data-wow-offset='0' data-wow-iteration='1'>
+				<div names="text" class="view_contents" >
+					<input type="text" class="sss" id="text3" value="OUR PRODUCTS" style="background:transparent;border:0 solid #ffffff"/>
+
+					</div>
+			</div>
+			<div id="text_style_02_1495449017210" class="view style_02 text  none wow fadeInDown lockHeightView"  data-wow-duration='1s' data-wow-delay='1s' data-wow-offset='0' data-wow-iteration='1'>
+				<div names="text" class="view_contents" >
+					<input type="text" class="sss"  value="热门分类" style="padding-left:110px;background:transparent;border:0 solid #ffffff"/>
+
+				</div>
+			</div>
+			<div id="image_style_01_1495503631389" class="view style_01 image  none wow tada"  data-wow-duration='5.8s' data-wow-delay='0.25s' data-wow-offset='0' data-wow-iteration='infinite'>
+				<div names="image" class="view_contents" >
+					<div class="imgStyle CompatibleImg">
+						<a href='javascript:;' target="">
+							<img class="picSet link-type-" id="text14" src="img/tianpin/img/hh.png" title="" alt="描述" onclick="exitpic(this.id)" />
+						</a>
+					</div>
+					<!-- 新加的js  -->
+				</div>
+			</div>
+			<div id="image_style_01_1495503561854" class="view style_01 image  none wow tada"  data-wow-duration='6s' data-wow-delay='0.25s' data-wow-offset='0' data-wow-iteration='infinite'>
+				<div names="image" class="view_contents" >
+					<div class="imgStyle CompatibleImg">
+						<a href='javascript:;' target="">
+							<img class="picSet link-type-" id="text15" src="img/tianpin/img/hh.png" title="" alt="描述" onclick="exitpic(this.id)"/>
+						</a>
+					</div>
+					<!-- 新加的js  -->
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+
+
+
+	<!-- -&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;-->
+	<div id="layout_1495447384942" class="layout "  data-wow-duration='0s' data-wow-delay='0s' data-wow-offset='0' data-wow-iteration='1'>
+		<div class="view_contents">
+			<div id="div_includeBlock_1495447753215" class="view includeBlock div  ev_m_tabView wow fadeInLeft includeView"  data-wow-duration='1s' data-wow-delay='0.75s' data-wow-offset='0' data-wow-iteration='1'>
+				<div names="div" class="view_contents" >
+					<div id="image_style_01_1495447753406" class="view style_01 image  none wow rubberBand"  data-wow-duration='2.5s' data-wow-delay='0.25s' data-wow-offset='0' data-wow-iteration='1'>
+						<div names="image" class="view_contents" >
+							<div class="imgStyle CompatibleImg">
+								<a href='javascript:;' target="">
+									<img class="picSet link-type-" src="image/tianpinan/xiumin.png" title="" alt="描述" id="text16" onclick="exitpic(this.id)"/>
+
+								</a>
+							</div>
+							<!-- 新加的js  -->
+						</div>
+					</div>
+					<div id="text_style_02_1495447753415" class="view style_02 text  none lockHeightView"  data-wow-duration='0s' data-wow-delay='0s' data-wow-offset='0' data-wow-iteration='1'>
+						<div names="text" class="view_contents" >
+							<!--<input type="file" id=""/>-->
+							<!--<button id="uploade16" onclick="upload(this.id)">上传</button>-->
+							<!--<br>-->
+
+							<input type="text" class="sss" id="text4" value="芝士蛋糕" style="background:transparent;border:0 solid #ffffff"/>
+
+						</div>
+					</div>
+				</div>
+			</div>
+			<div id="div_includeBlock_1495447726149" class="view includeBlock div  ev_m_tabView wow fadeInLeft includeView"  data-wow-duration='1s' data-wow-delay='0.5s' data-wow-offset='0' data-wow-iteration='1'>
+				<div names="div" class="view_contents" >
+					<div id="image_style_01_1495447726345" class="view style_01 image  none wow jello"  data-wow-duration='2.5s' data-wow-delay='0.5s' data-wow-offset='0' data-wow-iteration='1'>
+						<div names="image" class="view_contents" >
+							<div class="imgStyle CompatibleImg">
+								<a href='javascript:;' target="">
+									<img class="picSet link-type-" src="img/tianpin/img/hh.png" title="" alt="描述" id="text17" onclick="exitpic(this.id)"/>
+								</a>
+							</div>
+							<!-- 新加的js  -->
+						</div>
+					</div>
+					<div id="text_style_02_1495447726355" class="view style_02 text  none lockHeightView"  data-wow-duration='0s' data-wow-delay='0s' data-wow-offset='0' data-wow-iteration='1'>
+						<div names="text" class="view_contents" >
+							<input type="text"  id="text5" value="布丁" style="background:transparent;border:1px solid #ffffff"/>
+
+							</div>
+					</div>
+
+				</div>
+			</div>
+			<div id="div_includeBlock_1495447469295" class="view includeBlock div  ev_m_tabView wow fadeInLeft includeView"  data-wow-duration='1s' data-wow-delay='0.25s' data-wow-offset='0' data-wow-iteration='1'>
+				<div names="div" class="view_contents" >
+					<div id="image_style_01_1495447415992" class="view style_01 image  none wow rubberBand"  data-wow-duration='2s' data-wow-delay='0.25s' data-wow-offset='0' data-wow-iteration='1'>
+						<div names="image" class="view_contents" >
+							<div class="imgStyle CompatibleImg">
+								<a href='javascript:;' target="">
+									<img class="picSet link-type-" src="img/tianpin/img/mic.png" title="" alt="描述" id="text18" onclick="exitpic(this.id)"/>
+								</a>
+							</div>
+							<!-- 新加的js  -->
+						</div>
+					</div>
+					<div id="text_style_02_1495447507787" class="view style_02 text  none lockHeightView"  data-wow-duration='0s' data-wow-delay='0s' data-wow-offset='0' data-wow-iteration='1'>
+						<div names="text" class="view_contents" >
+							<input type="text" class="sss" id="text6" value="提拉米苏" style="background:transparent;border:0 solid #ffffff"/>
+
+							</div>
+					</div>
+				</div>
+			</div>
+			<div id="div_includeBlock_1495447775225" class="view includeBlock div  ev_m_tabView includeView"  data-wow-duration='0s' data-wow-delay='0s' data-wow-offset='0' data-wow-iteration='1'>
+				<div names="div" class="view_contents" >
+					<div id="image_style_01_1495447775429" class="view style_01 image  none wow swing"  data-wow-duration='2.5s' data-wow-delay='1s' data-wow-offset='0' data-wow-iteration='1'>
+						<div names="image" class="view_contents" >
+							<div class="imgStyle CompatibleImg">
+								<a href='javascript:;' target="">
+									<img class="picSet link-type-" src="img/tianpin/img/hh.png" title="" alt="描述" id="text19"/>
+								</a>
+							</div>
+							<!-- 新加的js  -->
+						</div>
+					</div>
+				</div>
+			</div>
+			<div id="div_includeBlock_1495447932396" class="view includeBlock div  ev_m_tabView wow fadeInLeft includeView"  data-wow-duration='1s' data-wow-delay='1s' data-wow-offset='0' data-wow-iteration='1'>
+				<div names="div" class="view_contents" >
+					<div id="image_style_01_1495447932693" class="view style_01 image  none wow tada"  data-wow-duration='2.7s' data-wow-delay='1.25s' data-wow-offset='0' data-wow-iteration='1'>
+						<div names="image" class="view_contents" >
+							<div class="imgStyle CompatibleImg">
+									<img class="picSet link-type-" isUrl="yes" src="img/tianpin/img/hh.png" title="" alt="描述" id="text20" onclick="exitpic(this.id)"/>
+							</div>
+						</div>
+					</div>
+					<div id="text_style_02_1495447932703" class="view style_02 text  none lockHeightView"  data-wow-duration='0s' data-wow-delay='0s' data-wow-offset='0' data-wow-iteration='1'>
+						<div names="text" class="view_contents" >
+							<input type="text" class="sss" id="text7" value="马卡龙" style="background:transparent;border:0 solid #ffffff"/>
+
+							</div></div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="layout_1495697831558" class="layout  none"  data-wow-duration='0s' data-wow-delay='0s' data-wow-offset='0' data-wow-iteration='1'>
+		<div class="view_contents" name="div">
+			<div id="image_style_01_1495698165124" class="view view style_01 image  none wow tada"  data-wow-duration='0s' data-wow-delay='0s' data-wow-offset='0' data-wow-iteration='1'>
+				<div names="div" class="view_contents" ></div>
+			</div>
+				<!--<div id="div_includeBlock_1495698419758" class="view includeBlock div  none includeView"  data-wow-duration='0s' data-wow-delay='0s' data-wow-offset='0' data-wow-iteration='1'>-->
+					<!--<div names="div" class="view_contents" >-->
+								<!--<div id="div_blank_1495699060546" class="view blank div  none"  data-wow-duration='0s' data-wow-delay='0s' data-wow-offset='0' data-wow-iteration='1'>-->
+									<!--<div names="div" class="view_contents" >-->
+										<!---->
+									<!--</div>-->
+								<!--</div>-->
+						<!--<div id="div_blank_1495700556179" class="view blank div  none"  data-wow-duration='0s' data-wow-delay='0s' data-wow-offset='0' data-wow-iteration='1'>-->
+							<!--<div names="div" class="view_contents" >cccccccccccccccccc-->
+							<!--</div>-->
+						<!--</div>-->
+						<!--<div id="div_blank_1495700861368" class="view blank div  none"  data-wow-duration='0s' data-wow-delay='0s' data-wow-offset='0' data-wow-iteration='1'>-->
+							<!--<div names="div" class="view_contents" >-->
+							<!--</div>-->
+						<!--</div>-->
+						<!--<div id="div_blank_1495700950172" class="view blank div  none"  data-wow-duration='0s' data-wow-delay='0s' data-wow-offset='0' data-wow-iteration='1'>-->
+							<!--<div names="div" class="view_contents" >-->
+							<!--</div>-->
+						<!--</div>-->
+						<!--<div id="div_blank_1495702764556" class="view blank div  none"  data-wow-duration='0s' data-wow-delay='0s' data-wow-offset='0' data-wow-iteration='1'>-->
+							<!--<div names="div" class="view_contents" >-->
+							<!--</div>-->
+						<!--</div>-->
+					<!--</div>-->
+				<!--</div>-->
+			<div id="div_blank_07_1495698773661" class="view blank_07 div  none wow zoomIn"  data-wow-duration='2s' data-wow-delay='0.25s' data-wow-offset='0' data-wow-iteration='1'>
+				<div names="div" class="view_contents" >
+					<div class="tongxin modSet"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="layout_1495678959723" class="layout  none"  data-wow-duration='0s' data-wow-delay='0s' data-wow-offset='0' data-wow-iteration='1'>
+		<div class="view_contents">
+			<div id="div_includeBlock_1495624360889" class="view includeBlock div  none includeView"  data-wow-duration='0s' data-wow-delay='0s' data-wow-offset='0' data-wow-iteration='1'>
+				<div names="div" class="view_contents" >
+					<div id="image_style_01_1495625350609" class="view style_01 image  none wow fadeInLeft"  data-wow-duration='1.6s' data-wow-delay='1s' data-wow-offset='0' data-wow-iteration='1'>
+						<div names="image" class="view_contents" >
+							<div class="imgStyle CompatibleImg">
+								<a href='javascript:;' target="">
+									<img class="picSet link-type-" src="img/tianpin/img/hh.png" title="" alt="描述" id="text21" onclick="exitpic(this.id)"/>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="layout_1495610373940" class="layout "  data-wow-duration='0s' data-wow-delay='0s' data-wow-offset='0' data-wow-iteration='1'>
+		<div class="view_contents">
+			<div id="text_style_02_1495610373948" class="view style_02 text  none wow fadeInDown lockHeightView"  data-wow-duration='1s' data-wow-delay='1s' data-wow-offset='0' data-wow-iteration='1'>
+				<div names="text" class="view_contents" >
+					<input type="text" class="sss" id="text8" value="aaa" style="background:transparent;border:0 solid #ffffff"/>
+
+				</div>
+			</div>
+			<div id="text_style_07_1495610373976" class="view style_07 text  none wow fadeInLeft lockHeightView"  data-wow-duration='1s' data-wow-delay='0.25s' data-wow-offset='0' data-wow-iteration='1'>
+				<div names="text" class="view_contents" >
+					<input type="text" class="sss" id="text9" value="bbb" style="background:transparent;border:0 solid #ffffff ;padding-top: 55px"/>
+
+				</div>
+			</div>
+			<div id="text_style_02_1495610373992" class="view style_02 text  none wow fadeInDown lockHeightView"  data-wow-duration='1s' data-wow-delay='0.25s' data-wow-offset='0' data-wow-iteration='1'>
+				<div names="text" class="view_contents" >
+					<input type="text" class="sss"  id="text10" value="热门甜品" style="padding-left: 135px;background:transparent;border:0 solid #ffffff"/>
+
+				</div>
+			</div>
+			<div id="image_style_01_1495610374018" class="view style_01 image  none wow tada"  data-wow-duration='5.8s' data-wow-delay='0.25s' data-wow-offset='0' data-wow-iteration='infinite'>
+				<div names="image" class="view_contents" >
+					<div class="imgStyle CompatibleImg">
+						<a href='javascript:;' target="">
+							<img class="picSet link-type-" src="img/tianpin/img/mic.png" title="" alt="描述" id="text22" onclick="exitpic(this.id)"/>
+						</a>
+					</div>
+
+				</div>
+			</div>
+					<div id="image_style_01_1495610374024" class="view style_01 image  none wow tada"  data-wow-duration='6s' data-wow-delay='0.25s' data-wow-offset='0' data-wow-iteration='infinite'>
+				<div names="image" class="view_contents" >
+					<div class="imgStyle CompatibleImg">
+						<!--左瑶瑶-->
+						<a href='javascript:;' target="">
+							<img class="picSet link-type-" src="img/tianpin/img/hh.png" title="" alt="描述" id="text23" onclick="exitpic(this.id)"/>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="layout_1495529953675" class="layout  none"  data-wow-duration='0s' data-wow-delay='0s' data-wow-offset='0' data-wow-iteration='1'>
+		<div class="view_contents">
+			<div id="prodKind_style_03_1495530160223" class="view style_03 prodKind  none wow fadeInUp lockHeightView"  data-wow-duration='1s' data-wow-delay='0.25s' data-wow-offset='0' data-wow-iteration='1'>
+				<div names="prodKind" class="view_contents" >
+<!--<script type="text/javascript" src="res/prodKind/style_03/default.js"></script>-->
+					<!--<script>-->
+<!--function clickli(){-->
+	<!--var pid="";-->
+	<!--var pgids='';-->
+	<!--$(".level1[pid="+pgids+"]").find("em").trigger("click");-->
+	<!--if($(".level1[pid="+pgids+"]").length==0) $(".le2[pid="+pgids+"]").parents(".level1").find("em").trigger("click");-->
+<!--}-->
+<!--window.onload = function() {-->
+	<!--var pid="";-->
+	<!--var pgids='';-->
+	<!--if(!pgids) pgids=Request('pgid');-->
+	<!--console.log("pid:"+pid);-->
+	<!--console.log("pgids:"+pgids);-->
+	<!--setTimeout('clickli()', 1000);-->
+	<!--$(".level1[pid="+pgids+"]").find("em").trigger("click");-->
+	<!--if($(".level1[pid="+pgids+"]").length==0) $(".le2[pid="+pgids+"]").parents(".level1").find("em").trigger("click");-->
+	<!---->
+<!--}-->
+<!--</script>-->
+<!---产品分类区域-->
+					<div class="prodcateStyle_3">
+						<ul class="oneBgSet" id="typeul">
+							<!--<li class="oneSet">-->
+								<!--<a href="#" target="_self" id="hreftext13">-->
+								<!--<input type="text" isUrl="1"  value="布丁" style="background:transparent;border: 0 solid #ffffff"/>-->
+								<!--</a></li>-->
+							<!--<li class="oneSet"><a href="http://www.baidu.com" target="_self" id="hreftext14" >-->
+								<!--<input type="text"    isUrl="1" value="马卡龙" style="background:transparent;border:0 solid #ffffff"/>-->
+
+								<!--</a></li>-->
+							<!--<li class="oneSet"><a href="index.htmlpgid=67780" target="_self"  id="hreftext15">-->
+								<!--<input type="text"  isUrl="1" value="提拉米苏" style="background:transparent;border:0 solid #ffffff"/>-->
+
+								<!--</a></li>-->
+							<!--<li class="oneSet"><a href="index.htmlpgid=67779" target="_self"  id="hreftext16">-->
+
+								<!--<input type="text" isUrl="1"   value="芝士蛋糕" style="background:transparent;border:0 solid #ffffff"/>-->
+								<!--</a></li>-->
+							<!--<li><button onclick="addtypeli()">添加分类</button></li>-->
+						</ul>
+					</div>
+<!--产品分类区域 结束-->
+				</div>
+			</div>
+			<div id="productList_style_03_1495529974293" class="view style_05 productList  none wow fadeInRight lockHeightView"  data-wow-duration='1s' data-wow-delay='1s' data-wow-offset='0' data-wow-iteration='1'>
+				<div names="productList" class="view_contents" style='display:none'>
+					<div class="prod_default5">
+						<ul id="prod_Ulist">
+							<li></li>
+							<li></li>
+		<!--<li></li>-->
+		<!--<li></li>-->
+		<!--<li></li>-->
+		<!--<li></li>-->
+		<!--<li></li>-->
+		<!--<li></li>-->
+						</ul>
+						<div class="page_btn">
+							<!--<script>var sys_url_productList_style_03_1495529974293="viewid=productList_style_03_1495529974293&name=productList&style=style_05&langid=0&pageid=61708&viewCtrl=default";</script><a class="paging cur" href="javascript:;" page='1'>1</a><a class="paging" page='2' href="javascript:;" onclick="RequestURL('productList_style_03_1495529974293', sys_url_productList_style_03_1495529974293, 'P_page=2')">2</a><a class="paging" page='3' href="javascript:;" onclick="RequestURL('productList_style_03_1495529974293', sys_url_productList_style_03_1495529974293, 'P_page=3')">3</a><a class="paging" page='4' href="javascript:;" onclick="RequestURL('productList_style_03_1495529974293', sys_url_productList_style_03_1495529974293, 'P_page=4')">4</a><a class="next_btn" href="javascript:;" onclick="RequestURL('productList_style_03_1495529974293', sys_url_productList_style_03_1495529974293, 'P_page=2')">></a>-->
+						</div>
+					</div>
+
+					<script type="text/javascript">
+$(function(){//有客户需求，点击分页之后回到顶部
+	$(".paging").click(function(){
+		scrollTo(0,0);
+	})
+})
+function is_mobile(){
+	return window.screen.width<767 || ($('body').width() > 0 && $('body').width() < 767);
+}
+</script>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="layout_1495614970835" class="layout "  data-wow-duration='0s' data-wow-delay='0s' data-wow-offset='0' data-wow-iteration='1'>
+		<div class="view_contents">
+			<div id="text_style_07_1495614970850" class="view style_07 text  none wow fadeInLeft lockHeightView"  data-wow-duration='1s' data-wow-delay='0.25s' data-wow-offset='0' data-wow-iteration='1'>
+				<div names="text" class="view_contents" >
+
+					<input class="sss" type="text"  id="text11" value="甜品" style="background:transparent;border:0 solid #ffffff" />
+
+					</div>
+			</div>
+			<div id="text_style_02_1495614970865" class="view style_02 text  none wow fadeInDown lockHeightView"  data-wow-duration='1s' data-wow-delay='0.25s' data-wow-offset='0' data-wow-iteration='1'>
+				<div names="text" class="view_contents" >
+					<input type="text" class="sss" id="text12" value="最新甜品" style="background:transparent;border:0 solid #ffffff" onclick=""/>
+
+					</div>
+			</div>
+			<div id="image_style_01_1495614970884" class="view style_01 image  none wow tada"  data-wow-duration='5.8s' data-wow-delay='0.25s' data-wow-offset='0' data-wow-iteration='infinite'>
+				<div names="image" class="view_contents" >
+					<div class="imgStyle CompatibleImg">
+						<a href='javascript:;' target="">
+							<!--<img class="picSet link-type-" src="img/tianpin/img/hh.png" title="" alt="描述" id="imageModeShow"/>-->
+						</a>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+	<div id="layout_1495503192398" class="layout  none"  data-wow-duration='0s' data-wow-delay='0s' data-wow-offset='0' data-wow-iteration='1'>
+		<div class="view_contents">
+			<div id="newsList_style_04_1495504523825" class="view style_04 newsList  none wow fadeInUp lockHeightView"  data-wow-duration='1s' data-wow-delay='0.25s' data-wow-offset='0' data-wow-iteration='1'>
+				<div names="newsList" class="view_contents" >
+<!--新闻列表区域-->
+					<div class="boxNewsListStyle_4">
+						<ul id="boxNewsList">
+
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+						</ul>
+						<div class="page_btn">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="layout_1495508747152" class="layout "  data-wow-duration='0s' data-wow-delay='0s' data-wow-offset='0' data-wow-iteration='1'>
+		<div class="view_contents">
+		</div>
+	</div>
+	<div id="comm_layout_footer" class="layout  none"  data-wow-duration='0s' data-wow-delay='0s' data-wow-offset='0' data-wow-iteration='1'>
+	</div>
+
+
+
+
+<script src="app/tianping.js"></script>
+
+</body>
+</html>

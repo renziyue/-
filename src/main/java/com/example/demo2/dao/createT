@@ -1,0 +1,121 @@
+# 模板页
+create table Template
+(
+  TEMPLATE_ID varchar(20) default '0' null comment '000000不是模板',
+  pageName    varchar(20)             null,
+  pageSet     varchar(50)             null comment 'page位置',
+  ext1        varchar(20)             null comment '编号',
+  ext2        varchar(20)             null comment '0 单用户  1多用户',
+  appId       varchar(20) default '0' null comment '模板ID 000000'
+)
+  charset = utf8;
+alter table Template  CONVERT TO CHARACTER SET utf8;
+insert into Template(TEMPLATE_ID,pageName,pageSet,ext1,appId) values ('5485','首页','tianpin/index','','');
+
+# 网站n用户
+create table USER
+(
+  ID     varchar(20) null,
+  PHONE  varchar(20) null,
+  PASSWD varchar(20) null,
+  EXT1   varchar(50) null,
+  EXT2   varchar(50) null
+)
+  charset = utf8;
+alter table USER  CONVERT TO CHARACTER SET utf8;
+
+
+
+# app用户
+create table CUSTOMER_INFO
+(
+  customerId    varchar(15)            null comment '顾客id',
+  customerPhone varchar(11)            null comment '顾客注册手机号',
+  customePasswd varchar(50)            null comment '密码',
+  appId         varchar(20)            null comment '注册商城',
+  customerKey   varchar(2) default '0' null comment '顾客分类，用于多用户
+0  顾客  1   商家',
+  createTime    date                   null,
+  ext1          varchar(20)            null,
+  ext2          varchar(20)            null
+);
+alter table CUSTOMER_INFO  CONVERT TO CHARACTER SET utf8;
+
+# 产品
+create table PRODOCTE
+(
+  ID       varchar(20)  null,
+  PRO_NAME varchar(20)  null,
+  PRICE    double       null,
+  NUM      int          null,
+  PRO_TYPE varchar(20)  null,
+  PHONE    varchar(20)  null,
+  BIANHAO  varchar(20)  null,
+  EXT1     varchar(50)  null,
+  EXT2     varchar(100) null
+)
+  charset = utf8;
+alter table PRODOCTE  CONVERT TO CHARACTER SET utf8;
+
+# 样式
+create table TYPE_TEXT
+(
+  ID      varchar(50)  null,
+  TYPE    varchar(20)  null,
+  URL_SRC varchar(500) null,
+  IS_URL  varchar(2)   null,
+  VALUE   varchar(500) null,
+  STYLE   varchar(100) null,
+  PHONE   varchar(20)  null,
+  BIANHAO varchar(20)  null,
+  EXT1    varchar(50)  null,
+  EXT2    varchar(50)  null
+)
+  charset = utf8;
+
+alter table TYPE_TEXT  CONVERT TO CHARACTER SET utf8;
+
+# app用户地址
+create table User_address
+(
+  ADDRESS_ID int auto_increment
+    primary key,
+  APP_ID     varchar(20)   null,
+  ADDRESS    varchar(70)   null,
+  IS_DEF     int default 0 null comment '0',
+  EXT1       varchar(50)   null comment 'name',
+  EXT2       varchar(50)   null comment 'phone',
+  userId     varchar(10)   null comment 'userId'
+)
+  charset = utf8;
+
+alter table User_address  CONVERT TO CHARACTER SET utf8;
+# 用户订单
+create table USER_ORDER
+(
+  ORDER_ID    int auto_increment comment '订单号'
+    primary key,
+  APP_ID      varchar(20) null comment '产品id',
+  USER_ID     varchar(20) null,
+  ORDER_NAME  varchar(20) null comment '订单名',
+  ORDER_PRICE double      null comment '订单价格',
+  ORDER_NUM   int         null,
+  ORDER_EXT1  varchar(50) null,
+  ORDER_TYPE  varchar(20) null,
+  CREATETIME  date        null
+);
+alter table USER_ORDER  CONVERT TO CHARACTER SET utf8;
+
+# 用户模板
+create table USER_TEMP
+(
+  USER_ID     varchar(20)            null comment 'userId',
+  PHONE       varchar(20)            null,
+  TEMPLATE_ID varchar(20)            null comment '模板Id',
+  appId       varchar(20)            null comment '产品Id',
+  appName     varchar(20)            null,
+  EXT1        varchar(2) default '0' null comment '0单用户  1 多用户',
+  EXT2        varchar(20)            null
+)
+  charset = utf8;
+alter table USER_TEMP  CONVERT TO CHARACTER SET utf8;

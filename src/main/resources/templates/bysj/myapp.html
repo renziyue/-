@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Foodie</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:200,300,400,500,600,700" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="mubanpage/css/owl.carousel.min.css">
+
+    <link rel="stylesheet" href="mubanpage/css/aos.css">
+
+    <link rel="stylesheet" href="mubanpage/css/style.css">
+
+
+    <style>
+        .show-list{
+            width:60%;
+            margin: 0 auto;
+        }
+        .show-list li{
+            height: 1rem;
+            font-size: .3rem;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            border-bottom: 1px solid #dcdcdc;
+        }
+    </style>
+
+</head>
+
+<body>
+
+
+
+    <section class="index-recipies">
+        <div class="container">
+            <h4 data-aos="fade-up" data-aos-duration="1000">请选择您要编辑的App</h4>
+            <h6 data-aos="fade-up" data-aos-duration="1000">and am a food blogger, please feel free to check my latest food recipes
+            </h6>
+            <ul class="row" id="addresslist">
+
+            </ul>
+        </div>
+    </section>
+
+
+
+
+
+
+
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+    <script src="mubanpage/js/owl.carousel.js"></script>
+    <script src="mubanpage/js/aos.js"></script>
+    <script src="mubanpage/js/script.js"></script>
+    <script>
+        jQuery(document).ready(function ($) {
+            $('.loop').owlCarousel({
+                center: true,
+                items: 2,
+                loop: true,
+                margin: 0,
+                // autoplay: true,
+                // slideTransition: 'linear',
+                // autoplayTimeout: 2000,
+                // autoplaySpeed: 1000,
+                // autoplayHoverPause: true,
+                responsive: {
+                    426: {
+                        items: 2
+                    },
+                    640: {
+                        items: 3
+                    },
+                    768: {
+                        items: 4
+                    },
+                }
+            });
+
+        });
+    </script>
+    <script>
+        selectApp();
+        function openApps(appId) {
+            parent.openApp(appId)
+        }
+
+
+        function selectApp() {
+            $.ajax({
+                url : 'userTemp/selectApp',
+                method : 'post',
+                data : {},
+                traditional: true,
+                cache : false,
+                dataType : 'json',
+                success: function(result){//返回的参数就是 action里面所有的有get和set方法的参数
+                    if (result.result == "success") {
+                        var  list=result.list;
+                        var   conut=result.count;
+
+                        if(conut=0){
+                            $("#addresslist").append("您还未创建App");
+                            return;
+                        }
+                        for(var i in list){
+                            // var addresslists="<li>"
+                            //     + " <div  style=\"background-color: #f9f9f9\">\n" +
+                            //     "  <label>"+list[i].appName+"</label>\n"
+                            //     +"<input type=\"button\" onclick='openApp("+list[i].appId+")' value=\"编辑\" style=\"vertical-align: middle;background-color: #f9f9f9;padding-left: 20%" +
+                            //     "\"  + </div></li>" ;
+                            var addresslists="    <li class=\"col-sm-6 col-md-4\">\n" +
+                                "                    <figure data-aos=\"fade-up\" data-aos-duration=\"800\">\n" +
+                                "                        <a href=\"#\" data-toggle=\"lightbox\" data-gallery=\"example-gallery\">\n" +
+                                "                            <img src=\"img/tempalteImg/one1.jpg\" alt=\"one\" class=\"img-responsive\">\n" +
+                                "                            <div class=\"overlay\">\n" +
+                                "                                <h5>"+list[i].appName+"</h5>\n" +
+                                "                                <span onclick='openApps("+list[i].appId+")'>点我编辑</span>\n" +
+                                "                            </div>\n" +
+                                "                        </a>\n" +
+                                "                    </figure>\n" +
+                                "                </li>";
+                            $("#addresslist").append(addresslists);
+                        }
+                    }
+
+                },
+                error : function(response) {
+                    alert('失败');
+                }
+            });
+        }
+    </script>
+    
+</body>
+
+</html>
